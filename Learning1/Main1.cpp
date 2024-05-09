@@ -177,7 +177,7 @@ int main()
 
 //item1.isbn()==item2.isbn()中的item1.isbn()，左侧item1.isbn（）代表调用“名为item1的对象的isbn成员函数，此函数返回item1中保存的ISBN书号”
 
-//书店程序
+/*书店程序
 #include "Sales_item.h"
 int main()
 {
@@ -200,6 +200,7 @@ int main()
 	}
 	return 0;//返回正确值0
 }
+*/
 
 /*
 Conclusion:
