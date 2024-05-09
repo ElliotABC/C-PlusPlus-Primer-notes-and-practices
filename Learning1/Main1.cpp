@@ -158,6 +158,7 @@ int main()
 }
 */
 
+/*
 #include "Sales_item.h"
 int main()
 {
@@ -172,3 +173,40 @@ int main()
 		return -1;
 	}
 }
+*/
+
+//item1.isbn()==item2.isbn()中的item1.isbn()，左侧item1.isbn（）代表调用“名为item1的对象的isbn成员函数，此函数返回item1中保存的ISBN书号”
+
+//书店程序
+#include "Sales_item.h"
+int main()
+{
+	Sales_item total;//保存下一条交易记录的变量
+	if (std::cin >> total) {//如果输入第一天交易数据（有输入）
+		Sales_item trans;//声明读取的的变量trans的数据类型为Sales_item
+		while (std::cin >> trans) {//输入剩余交易记录
+			if (total.isbn() == trans.isbn())//第一天和剩余交易数据对比是否相等，如果相等将trans加到total
+				total += trans;
+			else {//如果不相等，输出total并重置total
+				std::cout << total << std::endl;
+				total = trans;
+			}
+		}
+		std::cout << total << std::endl;//输出total值
+	}
+	else {//如果没有任何输入，没有任何销售记录，输出No data？！
+		std::cerr << "No data?!" << std::endl;//一个ostream对象，关联到标准错误。写入到ceer的数据一般不缓冲，通常输出错误信息等。Clog缓冲到日志文件，用于存储报告程序的执行信息
+		return -1;//返回错误值-1
+	}
+	return 0;//返回正确值0
+}
+
+/*
+Conclusion:
+本章介绍了足够多的C++语言的知识，以使你能够编译、运行简单的C++程序。
+我们看到了如何定义一个 main函数，它是操作系统执行你的程序的调用入口。
+我们还看到了如何定义变量，如何进行输入输出，以及如何编写if、for 和while 语句。
+本章最后介绍了 C++中最基本的特性----类
+在本章中，我们看到了，对于其他人定义的一个类，我们应该如何创建、使用其对象。
+在后续章节中，我们将介绍如何定义自己的类。
+*/
