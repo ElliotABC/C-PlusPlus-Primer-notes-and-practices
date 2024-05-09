@@ -1,4 +1,4 @@
-﻿#include "iostream"
+﻿//#include "iostream"
 //int main()	主函数是整个程序里必要的
 //{
 //	std::cout << "enter two numbers:" << std::endl;
