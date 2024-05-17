@@ -93,3 +93,21 @@ int main() {
 	std::cout << i - u << std::endl;
 	std::cout << u - i << std::endl;
 }
+
+/*
+字面值常量（数值不会改变）：
+	整型
+		八进制：0开头-》类型：int，unsigned int,long,unsigned long,long long,unsigned long long中尺寸最小的
+		十进制：什么都不动-》类型：int，long，long long中尺寸最小的（int）
+		十六进制：0x或0X开头
+		short没有字面值。十进制字面值不会是负数，如果是-42，负号不包含再字面值内，作用只是对字面值取负值
+		eg：十进制：20
+		八进制：024
+		十六进制：0x14
+	浮点
+		一个小数或科学计数法表示的指数，指数部分用E或e表示
+		
+		eg：3.14159.4.57，9.1，0.，0e0，.001
+
+
+*/
