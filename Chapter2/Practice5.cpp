@@ -15,6 +15,7 @@ int main() {
 	std::cout << u - u2 << std::endl;
 
 	int i = 10, i2 = 42;
+	i = i^ i2;
 	std::cout << i2 - i << std::endl;
 	std::cout << i - i2 << std::endl;
 	std::cout << i - u << std::endl;
