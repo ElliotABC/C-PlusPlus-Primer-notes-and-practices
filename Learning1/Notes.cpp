@@ -44,55 +44,6 @@ double精度比float大
 不带符号类型超出范围：8bit的unsigned integer，如果赋值-1，结果是255
 带符号类型超出范围：未定义
 */
-/*
-int main() {
-	unsigned u1 = 42, u2 = 10;
-	std::cout << u2 - u1 << std::endl;//输出取模的值
-	std::cout << u1 - u2 << std::endl;//输出32
-}
-*/
-/*
-int main() {
-	for (int i = 10; i >= 0; --i)
-		std::cout << i << std::endl;
-}
-*/
-/*无限循环：unsigned integer在-1时自动转换成4294967275
-int main() {
-	for (unsigned int u = 10; u >= 0; --u)
-		std::cout << u << std::endl;
-}
-*/
-
-/*带符号和不带符号类型相乘，如果a是int但是b是unsigned int，结果视当前机器上int所占位数而定，这个代码结果是4294967294
-int main() {
-	int a = 1;
-	unsigned int b = -1;
-	std::cout << a * b;
-}
-*/
-
-/*
-32
-4294967263//订正：4294967264
-
-32
--32
-0
-0
-*/
-//运行验证
-int main() {
-	unsigned u = 10, u2 = 42;
-	std::cout << u2 - u << std::endl;
-	std::cout << u - u2 << std::endl;
-
-	int i = 10, i2 = 42;
-	std::cout << i2 - i << std::endl;
-	std::cout << i - i2 << std::endl;
-	std::cout << i - u << std::endl;
-	std::cout << u - i << std::endl;
-}
 
 /*
 字面值常量（数值不会改变）：
@@ -108,6 +59,7 @@ int main() {
 		一个小数或科学计数法表示的指数，指数部分用E或e表示
 		
 		eg：3.14159.4.57，9.1，0.，0e0，.001
-
+	字符
+		
 
 */

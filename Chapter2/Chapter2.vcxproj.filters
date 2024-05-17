@@ -15,19 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Chapter1.cpp">
+    <ClCompile Include="..\Learning1\Notes.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="integer1.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Sales_item.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Version_test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <ClCompile Include="Practice5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
