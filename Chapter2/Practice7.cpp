@@ -29,4 +29,5 @@ d:3.14L为扩展浮点字面值，类型为long
 
 int main() {
 	std::cout << "2M" << '\n' << "2" << '\t' << "M" << '\n';
+	std::cout<<
 }
