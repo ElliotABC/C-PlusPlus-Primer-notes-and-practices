@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Learning1\Notes.cpp" />
+    <ClCompile Include="Practice10.cpp" />
     <ClCompile Include="Practice5.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -43,7 +44,10 @@
     <ClCompile Include="Practice7.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Practice8.cpp" />
+    <ClCompile Include="Practice8.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Practice9.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Learning1\Sales_item.h" />
