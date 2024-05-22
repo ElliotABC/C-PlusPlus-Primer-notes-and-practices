@@ -1,9 +1,4 @@
 #include "iostream"
-/*int main() {
-	int month = 06, day = 07;
-	std::cout << month << day;
-}
-*/
 /*
 2.1.3
 练习2.5
@@ -28,5 +23,8 @@ d:3.14L为扩展浮点字面值，类型为long
 */
 
 int main() {
+	int month = 06, day = 07;
+	std::cout << month << day;
 	std::cout << "2M" << '\n' << "2" << '\t' << "M" << '\n';
+
 }

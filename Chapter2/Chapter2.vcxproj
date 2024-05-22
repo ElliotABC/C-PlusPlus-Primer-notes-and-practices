@@ -40,7 +40,13 @@
     <ClCompile Include="Practice6.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Practice7.cpp" />
+    <ClCompile Include="Practice7.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Practice8.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Learning1\Sales_item.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
