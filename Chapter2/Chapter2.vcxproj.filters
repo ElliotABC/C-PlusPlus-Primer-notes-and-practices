@@ -48,6 +48,9 @@
     <ClCompile Include="Practice10.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Practice11.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Learning1\Sales_item.h">
