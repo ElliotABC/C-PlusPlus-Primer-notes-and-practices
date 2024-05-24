@@ -26,3 +26,45 @@ d：不合法，r1和d数据类型不一样
 2.17
 10 10
 */
+/*
+int main() {
+	int* ip1, * ip2;
+	int ival = 42;
+	int* ip = &ival;
+	int main() {
+		std::cout << ip1 << '\n' << ip2;
+	}
+}
+*/
+/*
+int main() {
+	int var1;
+	char var2[10];
+	std::cout << "var1变量的地址";
+	std::cout << &var1 << '\n';
+	std::cout << "var2变量的地址";
+	std::cout << &var2 << "\n";
+	
+
+	int var = 20;//实际变量的声明
+	int* ip;//指针变量的声明
+
+	ip = &var;//在指针变量ip中存储var的地址
+
+	std::cout << "Vale of var variable:" << var << '\n';//输出var的值
+	std::cout << "Address stored in ip variable:" << ip << '\n';//输出指针变量ip中存储的地址
+	std::cout << "Value of *ip variable:" << *ip << '\n';//输出指针中地址的值
+
+	return 0;
+}
+*/
+
+int main() {
+	int num1 = 6;
+	int* num2;
+	num2 = &num1;
+	num1 = 0;//覆盖原先num1值
+	std::cout << *num2 << '\n';//输出指针变量num2指向的变量num1的值
+	std::cout << num2;//输出指针变量num2的地址
+
+}
