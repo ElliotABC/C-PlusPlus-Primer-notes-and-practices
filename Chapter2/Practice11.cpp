@@ -1,27 +1,27 @@
-#include "iostream"
+ï»¿#include "iostream"
 
 /*
-2.2.3Á·Ï°
-a:int double = 3.14;	²»ºÏ·¨£¬±êÊ¶·ûÎªdouble£¬Êý¾ÝÀàÐÍÎªint£¬µ«¸³ÖµÊÇfloat
-b£ºint _;²»ºÏ·¨£¬º¯ÊýÍâ²»ÄÜÒÔÏÂ»®Ïß¿ªÍ·
-c£ºint catch-22£»²»ºÏ·¨£¬-²»Ó¦¸Ã´æÔÚ
-d£ºint 1_or_2 = 1;²»ºÏ·¨£¬Ò»¸ö±êÊ¶·û²»Ó¦¸Ã³öÏÖÁ½¸öÏÂ»®Ïß_
-e£ºdouble Double = 3.14;ºÏ·¨£¬±êÊ¶·ûÎªDouble£¬Êý¾ÝÀàÐÍÎªdouble£¬¸³ÖµÎªdouble
+2.2.3ç»ƒä¹ 
+a:int double = 3.14;	ä¸åˆæ³•ï¼Œæ ‡è¯†ç¬¦ä¸ºdoubleï¼Œæ•°æ®ç±»åž‹ä¸ºintï¼Œä½†èµ‹å€¼æ˜¯float
+bï¼šint _;ä¸åˆæ³•ï¼Œå‡½æ•°å¤–ä¸èƒ½ä»¥ä¸‹åˆ’çº¿å¼€å¤´
+cï¼šint catch-22ï¼›ä¸åˆæ³•ï¼Œ-ä¸åº”è¯¥å­˜åœ¨
+dï¼šint 1_or_2 = 1;ä¸åˆæ³•ï¼Œä¸€ä¸ªæ ‡è¯†ç¬¦ä¸åº”è¯¥å‡ºçŽ°ä¸¤ä¸ªä¸‹åˆ’çº¿_
+eï¼šdouble Double = 3.14;åˆæ³•ï¼Œæ ‡è¯†ç¬¦ä¸ºDoubleï¼Œæ•°æ®ç±»åž‹ä¸ºdoubleï¼Œèµ‹å€¼ä¸ºdouble
 */
 
 /*
-2.3.1Á·Ï°
+2.3.1ç»ƒä¹ 
 2.15
-a:int ival = 1.01//²»ºÏ·¨£¬ÕûÐÍµ«ÊÇ¸³Öµfloat
-b:int &rvall = 1.01;//²»ºÏ·¨£¬ÒýÓÃºÍ±»ÒýÓÃÊý¾ÝÀàÐÍ²»Í¬£¬ÒýÓÃÀàÐÍµÄ³õÊ¼Öµ±ØÐëÊÇÒ»¸ö¶ÔÏó
-c:int &refVal5 = dval;//ºÏ·¨£¬refValÒýÓÃdval
-int &rval3;//²»ºÏ·¨£¬ÓÐÒýÓÃ·ûºÏµ«ÊÇÃ»ÓÐ±»°ó¶¨
+a:int ival = 1.01//ä¸åˆæ³•ï¼Œæ•´åž‹ä½†æ˜¯èµ‹å€¼float
+b:int &rvall = 1.01;//ä¸åˆæ³•ï¼Œå¼•ç”¨å’Œè¢«å¼•ç”¨æ•°æ®ç±»åž‹ä¸åŒï¼Œå¼•ç”¨ç±»åž‹çš„åˆå§‹å€¼å¿…é¡»æ˜¯ä¸€ä¸ªå¯¹è±¡
+c:int &refVal5 = dval;//åˆæ³•ï¼ŒrefValå¼•ç”¨dval
+int &rval3;//ä¸åˆæ³•ï¼Œæœ‰å¼•ç”¨ç¬¦åˆä½†æ˜¯æ²¡æœ‰è¢«ç»‘å®š
 
 2.16
-a£ººÏ·¨£¬r2ÊÇdouble
-b£º²»ºÏ·¨£¬r2ºÍr1Êý¾ÝÀàÐÍ²»Ò»Ñù
-c:²»ºÏ·¨£¬iºÍr2ÒýÓÃµÄdÊý¾ÝÀàÐÍ²»Ò»Ñù
-d£º²»ºÏ·¨£¬r1ºÍdÊý¾ÝÀàÐÍ²»Ò»Ñù
+aï¼šåˆæ³•ï¼Œr2æ˜¯double
+bï¼šä¸åˆæ³•ï¼Œr2å’Œr1æ•°æ®ç±»åž‹ä¸ä¸€æ ·
+c:ä¸åˆæ³•ï¼Œiå’Œr2å¼•ç”¨çš„dæ•°æ®ç±»åž‹ä¸ä¸€æ ·
+dï¼šä¸åˆæ³•ï¼Œr1å’Œdæ•°æ®ç±»åž‹ä¸ä¸€æ ·
 
 2.17
 10 10

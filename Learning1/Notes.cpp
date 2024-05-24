@@ -1,225 +1,225 @@
-#include "iostream"
+ï»¿#include "iostream"
 /*
-ÕûÐÍ£º´ø·ûºÅºÍ²»´ø·ûºÅ
-	´ø·ûºÅ£ºint£¬short£¬long£¬long long
-	ÎÞ·ûºÅ£º unsigned int£¬unsigned short£¬unsigned long£¬unsigned long long
-×Ö·ûÐÍ£º´ø·ûºÅºÍ²»´ø·ûºÅ
-	´ø·ûºÅ£»char£¨ÓÉ±àÒëÆ÷¾ö¶¨£©£¬signed char
-	²»´ø·ûºÅ£ºchar£¨ÓÉ±àÒëÆ÷¾ö¶¨£©£¬unsigned char
-²¼¶ûÐÍ£ºbol
-	bol£ºtrue or false
-À©Õ¹×Ö·ûÐÍ
+æ•´åž‹ï¼šå¸¦ç¬¦å·å’Œä¸å¸¦ç¬¦å·
+	å¸¦ç¬¦å·ï¼šintï¼Œshortï¼Œlongï¼Œlong long
+	æ— ç¬¦å·ï¼š unsigned intï¼Œunsigned shortï¼Œunsigned longï¼Œunsigned long long
+å­—ç¬¦åž‹ï¼šå¸¦ç¬¦å·å’Œä¸å¸¦ç¬¦å·
+	å¸¦ç¬¦å·ï¼›charï¼ˆç”±ç¼–è¯‘å™¨å†³å®šï¼‰ï¼Œsigned char
+	ä¸å¸¦ç¬¦å·ï¼šcharï¼ˆç”±ç¼–è¯‘å™¨å†³å®šï¼‰ï¼Œunsigned char
+å¸ƒå°”åž‹ï¼šbol
+	bolï¼štrue or false
+æ‰©å±•å­—ç¬¦åž‹
 */
 
 /*
-int£¬long£¬long longºÍshortÇø±ð£¿
-intÊÇÕûÊý£¬ÊôÓÚÕûÐÍ£¬¿ÉÒÔ´ø·ûºÅ»òÕß²»´ø·ûºÅ£¨ÐèÒª¼Óunsigned£©
-longÊÇÒ»¸öÇ°×º£¬ÀýÈçlong int±Èint·¶Î§¸ü´ó£¬¿ÉÒÔ¼Óµ½Ç°ÃæÀ©´ó·¶Î§
-long longºÍlongÏàÍ¬×÷ÓÃ£¬µ«ÊÇÀ©Õ¹µÄ·¶Î§±Èlong¸ü´ó£¬ÀýÈçlong long int
-shortÊÇÒ»¸öÇ°×º£¬×÷ÓÃºÍlongÏà·´£¬¿ÉÒÔËõÐ¡·¶Î§£¬ÀýÈçshort int
+intï¼Œlongï¼Œlong longå’ŒshortåŒºåˆ«ï¼Ÿ
+intæ˜¯æ•´æ•°ï¼Œå±žäºŽæ•´åž‹ï¼Œå¯ä»¥å¸¦ç¬¦å·æˆ–è€…ä¸å¸¦ç¬¦å·ï¼ˆéœ€è¦åŠ unsignedï¼‰
+longæ˜¯ä¸€ä¸ªå‰ç¼€ï¼Œä¾‹å¦‚long intæ¯”intèŒƒå›´æ›´å¤§ï¼Œå¯ä»¥åŠ åˆ°å‰é¢æ‰©å¤§èŒƒå›´
+long longå’Œlongç›¸åŒä½œç”¨ï¼Œä½†æ˜¯æ‰©å±•çš„èŒƒå›´æ¯”longæ›´å¤§ï¼Œä¾‹å¦‚long long int
+shortæ˜¯ä¸€ä¸ªå‰ç¼€ï¼Œä½œç”¨å’Œlongç›¸åï¼Œå¯ä»¥ç¼©å°èŒƒå›´ï¼Œä¾‹å¦‚short int
 
-ÎÞ·ûºÅºÍ´ø·ûºÅÀàÐÍÇø±ð£¿
-ÎÞ·ûºÅ±íÊ¾ÕýÊý£¬¸ºÊýºÍ0
-´ø·ûºÅ±íÊ¾´óÓÚµÈÓÚ0
-eg£º8bit unsigned char·¶Î§£º0¡«127
-8bit signed char·¶Î§£º-128-127
+æ— ç¬¦å·å’Œå¸¦ç¬¦å·ç±»åž‹åŒºåˆ«ï¼Ÿ
+æ— ç¬¦å·è¡¨ç¤ºæ­£æ•°ï¼Œè´Ÿæ•°å’Œ0
+å¸¦ç¬¦å·è¡¨ç¤ºå¤§äºŽç­‰äºŽ0
+egï¼š8bit unsigned charèŒƒå›´ï¼š0ï½ž127
+8bit signed charèŒƒå›´ï¼š-128-127
 
-floutºÍdoubleÇø±ð£¿
-doubleºÍfloat¶¼±íÊ¾Ð¡Êý
-double¾«¶È±Èfloat´ó
+floutå’ŒdoubleåŒºåˆ«ï¼Ÿ
+doubleå’Œfloatéƒ½è¡¨ç¤ºå°æ•°
+doubleç²¾åº¦æ¯”floatå¤§
 */
 
 /*
-ÀûÂÊ-¡·flout£¬²»ÐèÒª·Ç³£¾«È·µÄÐ¡Êý£¬Ò»°ãÖ»ÒªÐ¡ÊýµãºóÁ½Î»
-±¾½ð-¡·flout£¬Í¬Ñù²»ÐèÒª·Ç³£¾«È·µÄÐ¡Êý£¬Ö»ÒªÐ¡ÊýµãºóÁ½Î»
-¸¶¿î-¡·boolean£¬ÅÐ¶ÏÊÇ·ñ¸¶¿î¡£¸¶¿îÍêreturn true£¬Ã»ÓÐ¸¶¿îreturn false
+åˆ©çŽ‡-ã€‹floutï¼Œä¸éœ€è¦éžå¸¸ç²¾ç¡®çš„å°æ•°ï¼Œä¸€èˆ¬åªè¦å°æ•°ç‚¹åŽä¸¤ä½
+æœ¬é‡‘-ã€‹floutï¼ŒåŒæ ·ä¸éœ€è¦éžå¸¸ç²¾ç¡®çš„å°æ•°ï¼Œåªè¦å°æ•°ç‚¹åŽä¸¤ä½
+ä»˜æ¬¾-ã€‹booleanï¼Œåˆ¤æ–­æ˜¯å¦ä»˜æ¬¾ã€‚ä»˜æ¬¾å®Œreturn trueï¼Œæ²¡æœ‰ä»˜æ¬¾return false
 */
 
 /*
-ÀàÐÍ×ª»»
-·Ç²¼¶ûÀàÐÍËãÊýÖµ¸³Öµ¸ø²¼¶ûÀàÐÍ£¬Èç¹û³õÊ¼ÖµÎª0£¬½á¹ûÎªfalse£¬·ñÔò½á¹ûÎªtrue
-²¼¶ûÖµ¸³Öµ¸ø·Ç²¼¶ûÀàÐÍ£¬³õÊ¼ÖµÎªfalseÔò½á¹ûÎª0£¬³õÊ¼ÖµÎªtrueÔò½á¹ûÎª1
-¸¡µãÊý¸³Öµ¸øÕûÊýÀàÐÍ£¬½üËÆ´¦Àí£¬±£Áô¸¡µãÊýÖÐÐ¡ÊýµãÖ®Ç°µÄ²¿·Ö£¨È¡ÕûÊý£©
-ÕûÊý¸³Öµ¸ø¸¡µãÀàÐÍ£¬Ð¡Êý²¿·Ö¼ÇÎª0.Èç¹ûÕûÊý³¬¹ý¸¡µã·¶Î§£¬¾«¶È¿ÉÄÜ»áËðÊ§
-²»´ø·ûºÅÀàÐÍ³¬³ö·¶Î§£º8bitµÄunsigned integer£¬Èç¹û¸³Öµ-1£¬½á¹ûÊÇ255
-´ø·ûºÅÀàÐÍ³¬³ö·¶Î§£ºÎ´¶¨Òå
+ç±»åž‹è½¬æ¢
+éžå¸ƒå°”ç±»åž‹ç®—æ•°å€¼èµ‹å€¼ç»™å¸ƒå°”ç±»åž‹ï¼Œå¦‚æžœåˆå§‹å€¼ä¸º0ï¼Œç»“æžœä¸ºfalseï¼Œå¦åˆ™ç»“æžœä¸ºtrue
+å¸ƒå°”å€¼èµ‹å€¼ç»™éžå¸ƒå°”ç±»åž‹ï¼Œåˆå§‹å€¼ä¸ºfalseåˆ™ç»“æžœä¸º0ï¼Œåˆå§‹å€¼ä¸ºtrueåˆ™ç»“æžœä¸º1
+æµ®ç‚¹æ•°èµ‹å€¼ç»™æ•´æ•°ç±»åž‹ï¼Œè¿‘ä¼¼å¤„ç†ï¼Œä¿ç•™æµ®ç‚¹æ•°ä¸­å°æ•°ç‚¹ä¹‹å‰çš„éƒ¨åˆ†ï¼ˆå–æ•´æ•°ï¼‰
+æ•´æ•°èµ‹å€¼ç»™æµ®ç‚¹ç±»åž‹ï¼Œå°æ•°éƒ¨åˆ†è®°ä¸º0.å¦‚æžœæ•´æ•°è¶…è¿‡æµ®ç‚¹èŒƒå›´ï¼Œç²¾åº¦å¯èƒ½ä¼šæŸå¤±
+ä¸å¸¦ç¬¦å·ç±»åž‹è¶…å‡ºèŒƒå›´ï¼š8bitçš„unsigned integerï¼Œå¦‚æžœèµ‹å€¼-1ï¼Œç»“æžœæ˜¯255
+å¸¦ç¬¦å·ç±»åž‹è¶…å‡ºèŒƒå›´ï¼šæœªå®šä¹‰
 */
 
 /*
-×ÖÃæÖµ³£Á¿£¨ÊýÖµ²»»á¸Ä±ä£©£º
-	ÕûÐÍ
-		°Ë½øÖÆ£º0¿ªÍ·-¡·ÀàÐÍ£ºint£¬unsigned int,long,unsigned long,long long,unsigned long longÖÐ³ß´ç×îÐ¡µÄ
-		Ê®½øÖÆ£ºÊ²Ã´¶¼²»¶¯-¡·ÀàÐÍ£ºint£¬long£¬long longÖÐ³ß´ç×îÐ¡µÄ£¨int£©
-		Ê®Áù½øÖÆ£º0x»ò0X¿ªÍ·
-		shortÃ»ÓÐ×ÖÃæÖµ¡£Ê®½øÖÆ×ÖÃæÖµ²»»áÊÇ¸ºÊý£¬Èç¹ûÊÇ-42£¬¸ººÅ²»°üº¬ÔÙ×ÖÃæÖµÄÚ£¬×÷ÓÃÖ»ÊÇ¶Ô×ÖÃæÖµÈ¡¸ºÖµ
-		eg£ºÊ®½øÖÆ£º20
-		°Ë½øÖÆ£º024
-		Ê®Áù½øÖÆ£º0x14
-	¸¡µã
-		Ò»¸öÐ¡Êý»ò¿ÆÑ§¼ÆÊý·¨±íÊ¾µÄÖ¸Êý£¬Ö¸Êý²¿·ÖÓÃE»òe±íÊ¾
+å­—é¢å€¼å¸¸é‡ï¼ˆæ•°å€¼ä¸ä¼šæ”¹å˜ï¼‰ï¼š
+	æ•´åž‹
+		å…«è¿›åˆ¶ï¼š0å¼€å¤´-ã€‹ç±»åž‹ï¼šintï¼Œunsigned int,long,unsigned long,long long,unsigned long longä¸­å°ºå¯¸æœ€å°çš„
+		åè¿›åˆ¶ï¼šä»€ä¹ˆéƒ½ä¸åŠ¨-ã€‹ç±»åž‹ï¼šintï¼Œlongï¼Œlong longä¸­å°ºå¯¸æœ€å°çš„ï¼ˆintï¼‰
+		åå…­è¿›åˆ¶ï¼š0xæˆ–0Xå¼€å¤´
+		shortæ²¡æœ‰å­—é¢å€¼ã€‚åè¿›åˆ¶å­—é¢å€¼ä¸ä¼šæ˜¯è´Ÿæ•°ï¼Œå¦‚æžœæ˜¯-42ï¼Œè´Ÿå·ä¸åŒ…å«å†å­—é¢å€¼å†…ï¼Œä½œç”¨åªæ˜¯å¯¹å­—é¢å€¼å–è´Ÿå€¼
+		egï¼šåè¿›åˆ¶ï¼š20
+		å…«è¿›åˆ¶ï¼š024
+		åå…­è¿›åˆ¶ï¼š0x14
+	æµ®ç‚¹
+		ä¸€ä¸ªå°æ•°æˆ–ç§‘å­¦è®¡æ•°æ³•è¡¨ç¤ºçš„æŒ‡æ•°ï¼ŒæŒ‡æ•°éƒ¨åˆ†ç”¨Eæˆ–eè¡¨ç¤º
 		
-		eg£º3.14159.4.57£¬9.1£¬0.£¬0e0£¬.001
-	×Ö·ûchar
-		µ¥ÒýºÅ
-		eg£º¡®a¡¯
-			¡®d¡¯
-			¡®g¡¯
-	×Ö·û´®×ÖÃæÖµstring£¨ÓÉ³£Á¿×Ö·û¹¹³ÉµÄÊý×é£©
-		Ë«ÒýºÅ
-		ÀýÈç¡°a¡±£¬°üº¬µ¥¶À×Ö·ûaºÍÁíÒ»¸ö¿Õ×Ö·û¡®\0¡¯
-		eg£º¡°abcdefg¡±
-			¡°Hello World¡±
-	×ªÒåÐòÁÐ
-		ÎÞ·¨Ö±½ÓÊ¹ÓÃ²»¿É´òÓ¡ºÍÌØÊâÓïÒåµÄ×Ö·û£¬ÐèÒªÊ¹ÓÃ×ªÒåÐòÁÐ(´ú±íÒ»¸ö×Ö·û)
-			1.²»¿É´òÓ¡£¨nonprintable£©µÄ×Ö·û
-			eg£ºÍË¸ñ£¬ÆäËû¿ØÖÆ×Ö·û£¨Ã»ÓÐ¿ÉÊÓµÄ×Ö·û£©
-			2.ÌØÊâÓïÒåµÄ×Ö·û
-			eg£º¡®¡¯¡°¡±£¿\
-		ÈçºÎÊ¹ÓÃ
-			·´Ð±Ïß¿ªÊ¼
-				»»ÐÐ·û		\n
-				×ÝÏòÖÆ±í·û	\v
-				·´Ð±Ïß		\\
-				»Ø³µ·û		\r
-				ºáÏòÖÆ±í·û	\t			Êä³öÒ»¸ötab
-				ÍË¸ñ·û		\b
-				ÎÊºÅ		\?
-				½øÖ½·û		\f
-				±¨¾¯·û		\a
-				Ë«ÒýºÅ		\"
-				µ¥ÒýºÅ		\'
-			·º»¯×ªÒåÐòÁÐ
-				\xºó¼Ó1¸ö»òÕß¶à¸öÊ®Áù½øÖÆÊý×Ö
+		egï¼š3.14159.4.57ï¼Œ9.1ï¼Œ0.ï¼Œ0e0ï¼Œ.001
+	å­—ç¬¦char
+		å•å¼•å·
+		egï¼šâ€˜aâ€™
+			â€˜dâ€™
+			â€˜gâ€™
+	å­—ç¬¦ä¸²å­—é¢å€¼stringï¼ˆç”±å¸¸é‡å­—ç¬¦æž„æˆçš„æ•°ç»„ï¼‰
+		åŒå¼•å·
+		ä¾‹å¦‚â€œaâ€ï¼ŒåŒ…å«å•ç‹¬å­—ç¬¦aå’Œå¦ä¸€ä¸ªç©ºå­—ç¬¦â€˜\0â€™
+		egï¼šâ€œabcdefgâ€
+			â€œHello Worldâ€
+	è½¬ä¹‰åºåˆ—
+		æ— æ³•ç›´æŽ¥ä½¿ç”¨ä¸å¯æ‰“å°å’Œç‰¹æ®Šè¯­ä¹‰çš„å­—ç¬¦ï¼Œéœ€è¦ä½¿ç”¨è½¬ä¹‰åºåˆ—(ä»£è¡¨ä¸€ä¸ªå­—ç¬¦)
+			1.ä¸å¯æ‰“å°ï¼ˆnonprintableï¼‰çš„å­—ç¬¦
+			egï¼šé€€æ ¼ï¼Œå…¶ä»–æŽ§åˆ¶å­—ç¬¦ï¼ˆæ²¡æœ‰å¯è§†çš„å­—ç¬¦ï¼‰
+			2.ç‰¹æ®Šè¯­ä¹‰çš„å­—ç¬¦
+			egï¼šâ€˜â€™â€œâ€ï¼Ÿ\
+		å¦‚ä½•ä½¿ç”¨
+			åæ–œçº¿å¼€å§‹
+				æ¢è¡Œç¬¦		\n
+				çºµå‘åˆ¶è¡¨ç¬¦	\v
+				åæ–œçº¿		\\
+				å›žè½¦ç¬¦		\r
+				æ¨ªå‘åˆ¶è¡¨ç¬¦	\t			è¾“å‡ºä¸€ä¸ªtab
+				é€€æ ¼ç¬¦		\b
+				é—®å·		\?
+				è¿›çº¸ç¬¦		\f
+				æŠ¥è­¦ç¬¦		\a
+				åŒå¼•å·		\"
+				å•å¼•å·		\'
+			æ³›åŒ–è½¬ä¹‰åºåˆ—
+				\xåŽåŠ 1ä¸ªæˆ–è€…å¤šä¸ªåå…­è¿›åˆ¶æ•°å­—
 				or
-				\ºó¼Ó1¸ö£¬2¸ö»ò3¸ö°Ë½øÖÆÊý×Ö
-				eg£ºLatin-1×Ö·û¼¯
-					\7		ÏìÁå
-					\0		¿Õ×Ö·û
-					\12		»»ÐÐ·û
-					\115	×Ö·ûMÊ®Áù½øÖÆ
-					\40		¿Õ¸ñ
-					\x4d	×Ö·ûM°Ë½øÖÆ
+				\åŽåŠ 1ä¸ªï¼Œ2ä¸ªæˆ–3ä¸ªå…«è¿›åˆ¶æ•°å­—
+				egï¼šLatin-1å­—ç¬¦é›†
+					\7		å“é“ƒ
+					\0		ç©ºå­—ç¬¦
+					\12		æ¢è¡Œç¬¦
+					\115	å­—ç¬¦Måå…­è¿›åˆ¶
+					\40		ç©ºæ ¼
+					\x4d	å­—ç¬¦Må…«è¿›åˆ¶
 */
 
 /*
-Ö¸¶¨×ÖÃæÖµÀàÐÍ
-	Í¨¹ýÌí¼ÓÇ°×ººÍºó×º£¬¿ÉÒÔ¸Ä±äÕûÐÍ¡¢¸¡µã¡¢×Ö·ûÐÍ×ÖÃæÖµµÄÄ¬ÈÏÀàÐÍ
-	U´ú±íunsigned£¬L´ú±ílong£¬LL´ú±ílong long
+æŒ‡å®šå­—é¢å€¼ç±»åž‹
+	é€šè¿‡æ·»åŠ å‰ç¼€å’ŒåŽç¼€ï¼Œå¯ä»¥æ”¹å˜æ•´åž‹ã€æµ®ç‚¹ã€å­—ç¬¦åž‹å­—é¢å€¼çš„é»˜è®¤ç±»åž‹
+	Uä»£è¡¨unsignedï¼ŒLä»£è¡¨longï¼ŒLLä»£è¡¨long long
 	UL	unsigned long
 	ULL	unsigned long long
-	eg£º
-	L'a'		¿í×Ö·û×ÖÃæÖµ£¬ÀàÐÍÎªwchar_t
-	u8"hi!"		utf-8×Ö·û´®×ÖÃæÖµ£¨utf-8ÓÃ8Î»±àÂë±àÐ´Ò»¸öUnicode×Ö·û£©
-	42ULL		ÎÞ·ûºÅÕûÐÍ×ÖÃæÖµ£¬ÀàÐÍÎªunsigned long long
-	1E-3F		µ¥¾«¶È¸¡µãÐÍ×ÖÃæÖµ£¬ÀàÐÍÎªfloat
-	3.14159L	À©Õ¹¾«¶È¸¡µãÐÍ×ÖÃæÖµ£¬ÀàÐÍÎªlong double
+	egï¼š
+	L'a'		å®½å­—ç¬¦å­—é¢å€¼ï¼Œç±»åž‹ä¸ºwchar_t
+	u8"hi!"		utf-8å­—ç¬¦ä¸²å­—é¢å€¼ï¼ˆutf-8ç”¨8ä½ç¼–ç ç¼–å†™ä¸€ä¸ªUnicodeå­—ç¬¦ï¼‰
+	42ULL		æ— ç¬¦å·æ•´åž‹å­—é¢å€¼ï¼Œç±»åž‹ä¸ºunsigned long long
+	1E-3F		å•ç²¾åº¦æµ®ç‚¹åž‹å­—é¢å€¼ï¼Œç±»åž‹ä¸ºfloat
+	3.14159L	æ‰©å±•ç²¾åº¦æµ®ç‚¹åž‹å­—é¢å€¼ï¼Œç±»åž‹ä¸ºlong double
 */
 
 /*
-²¼¶û×ÖÃæÖµºÍÖ¸Õë×ÖÃæÖµ
-	²¼¶û×ÖÃæÖµ
-		trueºÍfalse
-		eg£ºbool test = false
+å¸ƒå°”å­—é¢å€¼å’ŒæŒ‡é’ˆå­—é¢å€¼
+	å¸ƒå°”å­—é¢å€¼
+		trueå’Œfalse
+		egï¼šbool test = false
 			bool state = true
-	Ö¸Õë×ÖÃæÖµ
+	æŒ‡é’ˆå­—é¢å€¼
 		nullptr
-		£¡2.3.2µÚ47Ò³£¡
+		ï¼2.3.2ç¬¬47é¡µï¼
 */
 
 /*
-±äÁ¿
-	Ã¿¸ö±äÁ¿¶¼ÓÐÊý¾ÝÀàÐÍ£¬Êý¾ÝÀàÐÍ¾ö¶¨Õ¼ÓÃÄÚ´æ¿Õ¼ä´óÐ¡ºÍ²¼¾Ö·½Ê½ºÍ´æ´¢·¶Î§
-	±äÁ¿¿ÉÒÔ²ÎÓëÔËËã
-	±äÁ¿£¨variable£©ºÍ¶ÔÏó£¨object£©¿ÉÒÔ»¥»»Ê¹ÓÃ
-		±äÁ¿¸üÇ¿µ÷µÄÊÇ±äÁ¿ÃûÕâ¸ö·ûºÅµÄº¬Òå£¬¸üÇ¿µ÷Ãû×ÖÓëÄÚ´æµÄÁªÏµ£¬¶ø²»±Ø¹Ø×¢Õâ¶ÎÄÚ´æÊÇÊ²Ã´ÀàÐÍ£¬ÓÐ¶àÉÙ×Ö½Ú³¤¶È£¬Ö»¹Ø×¢Õâ¸ö±äÁ¿Ãûa¶ÔÓ¦×ÅÄ³¶ÎÄÚ´æ¡£
-		¶ø¶ÔÏóµÄÃèÊö¸üÇ¿µ÷µÄÊÇÄÚ´æµÄÀàÐÍ¶ø²»ÔÚºõÃû×Ö£¬Ò²¾ÍÊÇËµ£¬´Ó¶ÔÏóµÄ½Ç¶ÈÈ¥¿´ÄÚ´æ£¬¾ÍÐèÒªÇå³þÕâ¶ÎÄÚ´æµÄ×Ö½Ú³¤¶ÈµÈÐÅÏ¢£¬¶ø²»¹Ø×¢Õâ¸ö¶ÔÏóÔÚ´úÂëÖÐÊÇ·ñÓÐÒ»¸ö±äÁ¿ÃûÀ´ÒýÓÃµ½Õâ¶ÎÄÚ´æ
-		¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª£¨ÒýÓÃyby4769250¶Ô±äÁ¿ºÍ¶ÔÏóµÄ½âÊÍ£©
+å˜é‡
+	æ¯ä¸ªå˜é‡éƒ½æœ‰æ•°æ®ç±»åž‹ï¼Œæ•°æ®ç±»åž‹å†³å®šå ç”¨å†…å­˜ç©ºé—´å¤§å°å’Œå¸ƒå±€æ–¹å¼å’Œå­˜å‚¨èŒƒå›´
+	å˜é‡å¯ä»¥å‚ä¸Žè¿ç®—
+	å˜é‡ï¼ˆvariableï¼‰å’Œå¯¹è±¡ï¼ˆobjectï¼‰å¯ä»¥äº’æ¢ä½¿ç”¨
+		å˜é‡æ›´å¼ºè°ƒçš„æ˜¯å˜é‡åè¿™ä¸ªç¬¦å·çš„å«ä¹‰ï¼Œæ›´å¼ºè°ƒåå­—ä¸Žå†…å­˜çš„è”ç³»ï¼Œè€Œä¸å¿…å…³æ³¨è¿™æ®µå†…å­˜æ˜¯ä»€ä¹ˆç±»åž‹ï¼Œæœ‰å¤šå°‘å­—èŠ‚é•¿åº¦ï¼Œåªå…³æ³¨è¿™ä¸ªå˜é‡åaå¯¹åº”ç€æŸæ®µå†…å­˜ã€‚
+		è€Œå¯¹è±¡çš„æè¿°æ›´å¼ºè°ƒçš„æ˜¯å†…å­˜çš„ç±»åž‹è€Œä¸åœ¨ä¹Žåå­—ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼Œä»Žå¯¹è±¡çš„è§’åº¦åŽ»çœ‹å†…å­˜ï¼Œå°±éœ€è¦æ¸…æ¥šè¿™æ®µå†…å­˜çš„å­—èŠ‚é•¿åº¦ç­‰ä¿¡æ¯ï¼Œè€Œä¸å…³æ³¨è¿™ä¸ªå¯¹è±¡åœ¨ä»£ç ä¸­æ˜¯å¦æœ‰ä¸€ä¸ªå˜é‡åæ¥å¼•ç”¨åˆ°è¿™æ®µå†…å­˜
+		â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ï¼ˆå¼•ç”¨yby4769250å¯¹å˜é‡å’Œå¯¹è±¡çš„è§£é‡Šï¼‰
 
-                            °æÈ¨ÉùÃ÷£º±¾ÎÄÎª²©Ö÷Ô­´´ÎÄÕÂ£¬×ñÑ­ CC 4.0 BY-SA °æÈ¨Ð­Òé£¬×ªÔØÇë¸½ÉÏÔ­ÎÄ³ö´¦Á´½ÓºÍ±¾ÉùÃ÷¡£
-							Ô­ÎÄÁ´½Ó£ºhttps://blog.csdn.net/yby4769250/article/details/7377526
-	±äÁ¿¶¨Òå
-		ÀàÐÍËµÃ÷·û+Ò»¸ö»ò¶à¸ö±äÁ¿Ãû
-		eg£º
-		int sum = 0£¬value£¬units_sold = 0
-		sales_item item;//item±äÁ¿µÄÊý¾ÝÀàÐÍÊÇsales_item,ÐèÒªµ¼ÈëÍ·ÎÄ¼þ¡£Chapter1½²¹ý
-		std::string book("0-201-78345-X");//bookÍ¨¹ýstring×ÖÃæÖµ³õÊ¼»¯
-		stringºÍiostream¶¼ÊÇÔÚstdÃüÃû¿Õ¼äÖÐ¶¨ÒåµÄ£¬stringÊÇÒ»ÖÖ±íÊ¾¿É±ä³¤×Ö·ûÐòÁÐµÄÊý¾ÝÀàÐÍ
-		stringµÄÆäÖÐ¼¸ÖÖ³õÊ¼»¯·½·¨
-			¸³Öµ·¨string variable_name = "test01" ;//Ö±½Ó¸³Öµ
-			¿½±´·¨string variable_name(length, char);//ÒÔlengthÎª³¤¶ÈµÄcµÄ¿½±´£¨¼´length¸öc£©
+                            ç‰ˆæƒå£°æ˜Žï¼šæœ¬æ–‡ä¸ºåšä¸»åŽŸåˆ›æ–‡ç« ï¼Œéµå¾ª CC 4.0 BY-SA ç‰ˆæƒåè®®ï¼Œè½¬è½½è¯·é™„ä¸ŠåŽŸæ–‡å‡ºå¤„é“¾æŽ¥å’Œæœ¬å£°æ˜Žã€‚
+							åŽŸæ–‡é“¾æŽ¥ï¼šhttps://blog.csdn.net/yby4769250/article/details/7377526
+	å˜é‡å®šä¹‰
+		ç±»åž‹è¯´æ˜Žç¬¦+ä¸€ä¸ªæˆ–å¤šä¸ªå˜é‡å
+		egï¼š
+		int sum = 0ï¼Œvalueï¼Œunits_sold = 0
+		sales_item item;//itemå˜é‡çš„æ•°æ®ç±»åž‹æ˜¯sales_item,éœ€è¦å¯¼å…¥å¤´æ–‡ä»¶ã€‚Chapter1è®²è¿‡
+		std::string book("0-201-78345-X");//booké€šè¿‡stringå­—é¢å€¼åˆå§‹åŒ–
+		stringå’Œiostreaméƒ½æ˜¯åœ¨stdå‘½åç©ºé—´ä¸­å®šä¹‰çš„ï¼Œstringæ˜¯ä¸€ç§è¡¨ç¤ºå¯å˜é•¿å­—ç¬¦åºåˆ—çš„æ•°æ®ç±»åž‹
+		stringçš„å…¶ä¸­å‡ ç§åˆå§‹åŒ–æ–¹æ³•
+			èµ‹å€¼æ³•string variable_name = "test01" ;//ç›´æŽ¥èµ‹å€¼
+			æ‹·è´æ³•string variable_name(length, char);//ä»¥lengthä¸ºé•¿åº¦çš„cçš„æ‹·è´ï¼ˆå³lengthä¸ªcï¼‰
 
-ÊõÓï:ºÎÎª¶ÔÏó?
-C++³ÌÐòÔ±ÃÇÔÚºÜ¶à³¡ºÏ¶¼»áÊ¹ÓÃ¶ÔÏó(object)Õâ¸öÃû´Ê¡£Í¨³£Çé¿öÏÂ,¶ÔÏóÊÇÖ¸
-Ò»¿éÄÜ´æ´¢Êý¾Ý²¢¾ßÓÐÄ³ÖÖÀàÐÍµÄÄÚ´æ¿Õ¼ä¡£
+æœ¯è¯­:ä½•ä¸ºå¯¹è±¡?
+C++ç¨‹åºå‘˜ä»¬åœ¨å¾ˆå¤šåœºåˆéƒ½ä¼šä½¿ç”¨å¯¹è±¡(object)è¿™ä¸ªåè¯ã€‚é€šå¸¸æƒ…å†µä¸‹,å¯¹è±¡æ˜¯æŒ‡
+ä¸€å—èƒ½å­˜å‚¨æ•°æ®å¹¶å…·æœ‰æŸç§ç±»åž‹çš„å†…å­˜ç©ºé—´ã€‚
 
-Ò»Ð©ÈË½öÔÚÓëÀàÓÐ¹ØµÄ³¡¾°ÏÂ²ÅÊ¹ÓÃ¡°¶ÔÏó¡±Õâ¸ö´Ê¡£ÁíÒ»Ð©ÈËÔòÒÑ°ÑÃüÃûµÄ¶ÔÏó
-ºÍÎ´ÃüÃûµÄ¶ÔÏóÇø·Ö¿ªÀ´,ËûÃÇ°ÑÃüÃûÁËµÄ¶ÔÏó½Ð×ö±äÁ¿¡£»¹ÓÐÒ»Ð©ÈË°Ñ¶ÔÏóºÍÖµÇø·Ö
-¿ªÀ´,ÆäÖÐ¶ÔÏóÖ¸ÄÜ±»³ÌÐòÐÞ¸ÄµÄÊý¾Ý,¶øÖµ(value)Ö¸Ö»¶ÁµÄÊý¾Ý¡£
+ä¸€äº›äººä»…åœ¨ä¸Žç±»æœ‰å…³çš„åœºæ™¯ä¸‹æ‰ä½¿ç”¨â€œå¯¹è±¡â€è¿™ä¸ªè¯ã€‚å¦ä¸€äº›äººåˆ™å·²æŠŠå‘½åçš„å¯¹è±¡
+å’Œæœªå‘½åçš„å¯¹è±¡åŒºåˆ†å¼€æ¥,ä»–ä»¬æŠŠå‘½åäº†çš„å¯¹è±¡å«åšå˜é‡ã€‚è¿˜æœ‰ä¸€äº›äººæŠŠå¯¹è±¡å’Œå€¼åŒºåˆ†
+å¼€æ¥,å…¶ä¸­å¯¹è±¡æŒ‡èƒ½è¢«ç¨‹åºä¿®æ”¹çš„æ•°æ®,è€Œå€¼(value)æŒ‡åªè¯»çš„æ•°æ®ã€‚
 */
 
 /*
-³õÊ¼Öµ
-	¶ÔÏóÔÚ´´½¨Ê±»ñµÃÒ»¸öÌØ¶¨µÄÖµ
-		eg:double price = 109.99,discount = price * 0.16;//:priceÏÈ±»¶¨Òå²¢¸³Öµ,Ëæºó±»ÓÃÓÚ³õÊ¼»¯discount
-		double salePrice = applyDiscount (price, discount);//µ÷ÓÃº¯ÊýapplyDiscount,È»ºóÓÃº¯ÊýµÄ·µ»ØÖµ³õÊ¼»¯
-		³õÊ¼»¯²»ÊÇ¸³Öµ£¬ÊÇ´´½¨±äÁ¿ÊÇ¸³ÓèÆäÒ»¸ö³õÊ¼Öµ
-		¸³Öµº¬ÒåÊÇ°Ñµ±Ç°¶ÔÏó²Á³ý£¬ÓÃÐÂÖµÌæ´ú
+åˆå§‹å€¼
+	å¯¹è±¡åœ¨åˆ›å»ºæ—¶èŽ·å¾—ä¸€ä¸ªç‰¹å®šçš„å€¼
+		eg:double price = 109.99,discount = price * 0.16;//:priceå…ˆè¢«å®šä¹‰å¹¶èµ‹å€¼,éšåŽè¢«ç”¨äºŽåˆå§‹åŒ–discount
+		double salePrice = applyDiscount (price, discount);//è°ƒç”¨å‡½æ•°applyDiscount,ç„¶åŽç”¨å‡½æ•°çš„è¿”å›žå€¼åˆå§‹åŒ–
+		åˆå§‹åŒ–ä¸æ˜¯èµ‹å€¼ï¼Œæ˜¯åˆ›å»ºå˜é‡æ˜¯èµ‹äºˆå…¶ä¸€ä¸ªåˆå§‹å€¼
+		èµ‹å€¼å«ä¹‰æ˜¯æŠŠå½“å‰å¯¹è±¡æ“¦é™¤ï¼Œç”¨æ–°å€¼æ›¿ä»£
 
-ÁÐ±í³õÊ¼»¯(½÷É÷Ê¹ÓÃ)
-	³õÊ¼»¯units_soldµÄint±äÁ¿²¢³õÊ¼»¯Îª0
+åˆ—è¡¨åˆå§‹åŒ–(è°¨æ…Žä½¿ç”¨)
+	åˆå§‹åŒ–units_soldçš„intå˜é‡å¹¶åˆå§‹åŒ–ä¸º0
 		int units_sold = 0;
 		int units_sold = (0);
 		int units_sold(0);
-		int units_sold{0};//½öÏÞC++11±ê×¼
-	int units_sold{0}Ê¹ÓÃ»¨À¨ºÅ->ÁÐ±í³õÊ¼»¯
-		È±µã£º¿ÉÄÜ»á¶ªÊ§ÐÅÏ¢
+		int units_sold{0};//ä»…é™C++11æ ‡å‡†
+	int units_sold{0}ä½¿ç”¨èŠ±æ‹¬å·->åˆ—è¡¨åˆå§‹åŒ–
+		ç¼ºç‚¹ï¼šå¯èƒ½ä¼šä¸¢å¤±ä¿¡æ¯
 			long double id = 3.1415926536;
-			int a{id},b = {id};//´íÎó£¬×ª»»Î´Ö´ÐÐ£¬¿ÉÄÜ´æÔÚ¶ªÊ§ÐÅÏ¢µÄ·çÏÕ
-			int c{id},d = id;//ÕýÈ·£¬×ª»»Ö´ÐÐ£¬¶ªÊ§ÁË²¿·ÖÖµ£ºÐ¡ÊýµãºóÃæµÄËùÓÐÊý×Ö
-Ä¬ÈÏ³õÊ¼»¯
-	Ã»ÓÐÖ¸¶¨³õÖµ£¬±äÁ¿±»¸³ÓèÄ¬ÈÏÖµ
-	±äÁ¿ÀàÐÍºÍ±äÁ¿Î»ÖÃ¾ö¶¨³õÊ¼ÖµÊÇÊ²Ã´
-		¶¨ÒåÓÚº¯ÊýÌåÖ®ÍâµÄ±äÁ¿»á±»³õÊ¼»¯Îª0
-		¶¨ÒåÓÚº¯ÊýÌåÖ®ÄÚµÄ±äÁ¿²»»á±»³õÊ¼»¯
-		eg£ºstd::string empty;
+			int a{id},b = {id};//é”™è¯¯ï¼Œè½¬æ¢æœªæ‰§è¡Œï¼Œå¯èƒ½å­˜åœ¨ä¸¢å¤±ä¿¡æ¯çš„é£Žé™©
+			int c{id},d = id;//æ­£ç¡®ï¼Œè½¬æ¢æ‰§è¡Œï¼Œä¸¢å¤±äº†éƒ¨åˆ†å€¼ï¼šå°æ•°ç‚¹åŽé¢çš„æ‰€æœ‰æ•°å­—
+é»˜è®¤åˆå§‹åŒ–
+	æ²¡æœ‰æŒ‡å®šåˆå€¼ï¼Œå˜é‡è¢«èµ‹äºˆé»˜è®¤å€¼
+	å˜é‡ç±»åž‹å’Œå˜é‡ä½ç½®å†³å®šåˆå§‹å€¼æ˜¯ä»€ä¹ˆ
+		å®šä¹‰äºŽå‡½æ•°ä½“ä¹‹å¤–çš„å˜é‡ä¼šè¢«åˆå§‹åŒ–ä¸º0
+		å®šä¹‰äºŽå‡½æ•°ä½“ä¹‹å†…çš„å˜é‡ä¸ä¼šè¢«åˆå§‹åŒ–
+		egï¼šstd::string empty;
 		Sales_item item
 
-±äÁ¿ÉùÃ÷ºÍ¶¨Òå¹ØÏµ
-	·ÖÀëÊ½±àÒë
-		ÎªÁËÖ§³Ö·ÖÀëÊ½±àÒë,C++ÓïÑÔ½«ÉùÃ÷ºÍ¶¨ÒåÇø·Ö¿ªÀ´¡£ÉùÃ÷(declaration)Ê¹µÃÃû×Ö
-		Îª³ÌÐòËùÖª,Ò»¸öÎÄ¼þÈç¹ûÏëÊ¹ÓÃ±ð´¦¶¨ÒåµÄÃû×ÖÔò±ØÐë°üº¬¶ÔÄÇ¸öÃû×ÖµÄÉùÃ÷¡£¶ø¶¨Òå
-		(definition)¸ºÔð´´½¨ÓëÏ¦×Ö¹ØÁªµÄÊµÌå¡£
-		ÉùÃ÷Ò»¸ö±äÁ¿ÇÒ²»¶¨ÒåËü£¬ÔÚ±äÁ¿ÃûÇ°Ìí¼Óextern£¬²»ÒªÏÔÊ¾µÄ³õÊ¼»¯±äÁ¿
-		£¡£¡£¡±äÁ¿µÄ¶¨Òå±ØÐë³öÏÖÔÚÇÒÖ»ÄÜ³öÏÖÔÚÒ»¸öÎÄ¼þÖÐ,¶øÆäËûÓÃµ½¸Ã±äÁ¿µÄÎÄ¼þ±ØÐë¶ÔÆä½øÐÐÉùÃ÷,È´¾ø¶Ô²»ÄÜÖØ¸´¶¨Òå£¡£¡£¡
-			extern int i;//ÉùÃ÷i¶ø·Ç¶¨Òå
-			int j£»//ÉùÃ÷²¢¶¨Òåj
-			extern double pi = 3.1416;//¶¨Òå¶ø²»ÊÇÉùÃ÷
-			Important£¡
-				±äÁ¿Ö»ÄÜ±»¶¨ÒåÒ»´Î£¬µ«ÊÇ¿ÉÒÔ±»¶à´ÎÉùÃ÷£¡
-				¼ÙÉèÎÄ¼þa£¬ÎÄ¼þb¡£ÎÄ¼þaÀïÐèÒªÉùÃ÷²¢¶¨Òå±äÁ¿time£¬
-				Èç¹ûÒªÔÚÎÄ¼þbÀïÊ¹ÓÃ±äÁ¿time£¬Ôò±ØÐëÉùÃ÷Ò»´Î±äÁ¿time£¬
-				²»ÄÜÔÙ´Î¶¨ÒåÕâ¸ö±äÁ¿
+å˜é‡å£°æ˜Žå’Œå®šä¹‰å…³ç³»
+	åˆ†ç¦»å¼ç¼–è¯‘
+		ä¸ºäº†æ”¯æŒåˆ†ç¦»å¼ç¼–è¯‘,C++è¯­è¨€å°†å£°æ˜Žå’Œå®šä¹‰åŒºåˆ†å¼€æ¥ã€‚å£°æ˜Ž(declaration)ä½¿å¾—åå­—
+		ä¸ºç¨‹åºæ‰€çŸ¥,ä¸€ä¸ªæ–‡ä»¶å¦‚æžœæƒ³ä½¿ç”¨åˆ«å¤„å®šä¹‰çš„åå­—åˆ™å¿…é¡»åŒ…å«å¯¹é‚£ä¸ªåå­—çš„å£°æ˜Žã€‚è€Œå®šä¹‰
+		(definition)è´Ÿè´£åˆ›å»ºä¸Žå¤•å­—å…³è”çš„å®žä½“ã€‚
+		å£°æ˜Žä¸€ä¸ªå˜é‡ä¸”ä¸å®šä¹‰å®ƒï¼Œåœ¨å˜é‡åå‰æ·»åŠ externï¼Œä¸è¦æ˜¾ç¤ºçš„åˆå§‹åŒ–å˜é‡
+		ï¼ï¼ï¼å˜é‡çš„å®šä¹‰å¿…é¡»å‡ºçŽ°åœ¨ä¸”åªèƒ½å‡ºçŽ°åœ¨ä¸€ä¸ªæ–‡ä»¶ä¸­,è€Œå…¶ä»–ç”¨åˆ°è¯¥å˜é‡çš„æ–‡ä»¶å¿…é¡»å¯¹å…¶è¿›è¡Œå£°æ˜Ž,å´ç»å¯¹ä¸èƒ½é‡å¤å®šä¹‰ï¼ï¼ï¼
+			extern int i;//å£°æ˜Žiè€Œéžå®šä¹‰
+			int jï¼›//å£°æ˜Žå¹¶å®šä¹‰j
+			extern double pi = 3.1416;//å®šä¹‰è€Œä¸æ˜¯å£°æ˜Ž
+			Importantï¼
+				å˜é‡åªèƒ½è¢«å®šä¹‰ä¸€æ¬¡ï¼Œä½†æ˜¯å¯ä»¥è¢«å¤šæ¬¡å£°æ˜Žï¼
+				å‡è®¾æ–‡ä»¶aï¼Œæ–‡ä»¶bã€‚æ–‡ä»¶aé‡Œéœ€è¦å£°æ˜Žå¹¶å®šä¹‰å˜é‡timeï¼Œ
+				å¦‚æžœè¦åœ¨æ–‡ä»¶bé‡Œä½¿ç”¨å˜é‡timeï¼Œåˆ™å¿…é¡»å£°æ˜Žä¸€æ¬¡å˜é‡timeï¼Œ
+				ä¸èƒ½å†æ¬¡å®šä¹‰è¿™ä¸ªå˜é‡
 
-±êÊ¶·û
-	ÓÉ×Ö·û£¬Êý×ÖºÍÏÂ»®Ïß×é³É
-		±ØÐëÓÉ×ÖÄ¸»òÏÂ»®Ïß¿ªÍ·£¬³¤¶ÈÃ»ÓÐÏÞÖÆ£¬¶Ô´óÐ¡Ð´Ãô¸Ð
-		²»ÄÜÊ¹ÓÃC++×Ô´øµÄ¹Ø¼ü×ÖºÍ²Ù×÷·ûÌæ´úÃû£¬²»ÄÜÁ¬Ðø³öÏÖÁ½¸ö_ÏÂ»®Ïß£¬²»ÄÜ_AÏÂ»®ÏßÖ®ºó´óÐ´×æÄ¸
-		º¯ÊýÖ®ÍâµÄ±êÊ¶·û²»ÄÜ_ÏÂ»®Ïß¿ªÍ·
-		eg£ºint somename,someName,SomeName,SOMENAME,_somename
-	±äÁ¿ÃüÃû¹æ·¶£º
-		1.Êµ¼Êº¬Òå
-		2.Ð¡Ð´×ÖÄ¸¡£eg£ºindex
-		3.×Ô¶¨ÒåÀàÃû´óÐ´×ÖÄ¸¿ªÍ·¡£eg£ºSales_item
-		4.ÓÉ¶à¸öµ¥´Ê×é³ÉÓ¦ÓÐÃ÷ÏÔÇø·Ö¡£eg£ºstudent_loan
+æ ‡è¯†ç¬¦
+	ç”±å­—ç¬¦ï¼Œæ•°å­—å’Œä¸‹åˆ’çº¿ç»„æˆ
+		å¿…é¡»ç”±å­—æ¯æˆ–ä¸‹åˆ’çº¿å¼€å¤´ï¼Œé•¿åº¦æ²¡æœ‰é™åˆ¶ï¼Œå¯¹å¤§å°å†™æ•æ„Ÿ
+		ä¸èƒ½ä½¿ç”¨C++è‡ªå¸¦çš„å…³é”®å­—å’Œæ“ä½œç¬¦æ›¿ä»£åï¼Œä¸èƒ½è¿žç»­å‡ºçŽ°ä¸¤ä¸ª_ä¸‹åˆ’çº¿ï¼Œä¸èƒ½_Aä¸‹åˆ’çº¿ä¹‹åŽå¤§å†™ç¥–æ¯
+		å‡½æ•°ä¹‹å¤–çš„æ ‡è¯†ç¬¦ä¸èƒ½_ä¸‹åˆ’çº¿å¼€å¤´
+		egï¼šint somename,someName,SomeName,SOMENAME,_somename
+	å˜é‡å‘½åè§„èŒƒï¼š
+		1.å®žé™…å«ä¹‰
+		2.å°å†™å­—æ¯ã€‚egï¼šindex
+		3.è‡ªå®šä¹‰ç±»åå¤§å†™å­—æ¯å¼€å¤´ã€‚egï¼šSales_item
+		4.ç”±å¤šä¸ªå•è¯ç»„æˆåº”æœ‰æ˜Žæ˜¾åŒºåˆ†ã€‚egï¼šstudent_loan
 
-Ãû×ÖµÄ×÷ÓÃÓò
-	×÷ÓÃÓòÊÇ³ÌÐòµÄÒ»²¿·Ö£¬ÓÃ»¨À¨ºÅ·Ö¸ô
-		Í¬Ò»¸öÃû×ÖÔÚ²»Í¬µÄ×÷ÓÃÓòÖÐ¿ÉÄÜÖ¸Ïò²»Í¬µÄÊµÌå¡£
-		Ãû×ÖµÄÓÐÐ§ÇøÓòÊ¼ÓÚÃû×ÖµÄÉùÃ÷Óï¾ä,ÒÔÉùÃ÷Óï¾äËùÔÚµÄ×÷ÓÃÓòÄ©¶ËÎª½áÊø¡£
-	Ê¾Àý´úÂë£º
-	int main()//main¶¨ÒåÓÚ»¨À¨ºÅÖ®Íâ£¬Õû¸ö³ÌÐò·¶Î§ÄÚ¶¼¿ÉÒÔÊ¹ÓÃ£¬ÓµÓÐÈ«¾Ö×÷ÓÃÓò
+åå­—çš„ä½œç”¨åŸŸ
+	ä½œç”¨åŸŸæ˜¯ç¨‹åºçš„ä¸€éƒ¨åˆ†ï¼Œç”¨èŠ±æ‹¬å·åˆ†éš”
+		åŒä¸€ä¸ªåå­—åœ¨ä¸åŒçš„ä½œç”¨åŸŸä¸­å¯èƒ½æŒ‡å‘ä¸åŒçš„å®žä½“ã€‚
+		åå­—çš„æœ‰æ•ˆåŒºåŸŸå§‹äºŽåå­—çš„å£°æ˜Žè¯­å¥,ä»¥å£°æ˜Žè¯­å¥æ‰€åœ¨çš„ä½œç”¨åŸŸæœ«ç«¯ä¸ºç»“æŸã€‚
+	ç¤ºä¾‹ä»£ç ï¼š
+	int main()//mainå®šä¹‰äºŽèŠ±æ‹¬å·ä¹‹å¤–ï¼Œæ•´ä¸ªç¨‹åºèŒƒå›´å†…éƒ½å¯ä»¥ä½¿ç”¨ï¼Œæ‹¥æœ‰å…¨å±€ä½œç”¨åŸŸ
 	{
-		int sum = 0, val = 1;//sumÔÚº¯ÊýÌåÖ®ÄÚ£¬³öÁËmainº¯Êý¿é¾ÍÎÞ·¨·ÃÎÊ£¬ÓµÓÐ¿é×÷ÓÃÓò
+		int sum = 0, val = 1;//sumåœ¨å‡½æ•°ä½“ä¹‹å†…ï¼Œå‡ºäº†mainå‡½æ•°å—å°±æ— æ³•è®¿é—®ï¼Œæ‹¥æœ‰å—ä½œç”¨åŸŸ
 		while (val <= 10)
 		{
 			sum += val;
@@ -229,37 +229,37 @@ C++³ÌÐòÔ±ÃÇÔÚºÜ¶à³¡ºÏ¶¼»áÊ¹ÓÃ¶ÔÏó(object)Õâ¸öÃû´Ê¡£Í¨³£Çé¿öÏÂ,¶ÔÏóÊÇÖ¸
 		return 0;
 	}
 
-Ç¶Ì×µÄ×÷ÓÃÓò
-	±»°üº¬£ºÄÚ²ã×÷ÓÃÓò
-	°üº¬£ºÍâ²ã×÷ÓÃÓò
-		ÄÚ²ã×÷ÓÃÓò¿ÉÒÔ·ÃÎÊÍâ²ãµÄ×÷ÓÃÓò£¬ÄÚ´æ×÷ÓÃÓòÒ²¿ÉÒÔÖØÐÂ¶¨ÒåÍâ²ã×÷ÓÃÓòÒÑÓÐµÄÃû×Ö
-	¾Ö²¿±äÁ¿Èç¹û¸²¸ÇÈ«¾Ö±äÁ¿£¬µ«ÈÔÈ»ÐèÒªÈ«¾Ö±äÁ¿£¬Ó¦¸ÃÔÚ±êÊ¶·ûÇ°¼Ó::
+åµŒå¥—çš„ä½œç”¨åŸŸ
+	è¢«åŒ…å«ï¼šå†…å±‚ä½œç”¨åŸŸ
+	åŒ…å«ï¼šå¤–å±‚ä½œç”¨åŸŸ
+		å†…å±‚ä½œç”¨åŸŸå¯ä»¥è®¿é—®å¤–å±‚çš„ä½œç”¨åŸŸï¼Œå†…å­˜ä½œç”¨åŸŸä¹Ÿå¯ä»¥é‡æ–°å®šä¹‰å¤–å±‚ä½œç”¨åŸŸå·²æœ‰çš„åå­—
+	å±€éƒ¨å˜é‡å¦‚æžœè¦†ç›–å…¨å±€å˜é‡ï¼Œä½†ä»ç„¶éœ€è¦å…¨å±€å˜é‡ï¼Œåº”è¯¥åœ¨æ ‡è¯†ç¬¦å‰åŠ ::
 
-¸´ºÏÀàÐÍ
-	»ùÓÚÆäËûÀàÐÍ¶¨ÒåµÄÀàÐÍ
-	ÒýÓÃºÍÖ¸Õë
-		ÒýÓÃ
-			Îª¶ÔÏóÆðÁËÁíÒ»¸öÃû×Ö£¬ÒýÓÃÀàÐÍÒýÓÃÁíÒ»¸öÀàÐÍ£¬
-			ÉùÃ÷·ûÐ´³É&dÀ´¶¨ÒåÒýÓÃÀàÐÍ£¬dÊÇÉùÃ÷µÄ±äÁ¿Ãû
-			eg£ºint ival = 1024;//ÉùÃ÷¶¨ÒåÒ»¸öÕûÐÍ±äÁ¿ival²¢¸³Öµ2014
-				int &refVal = ival;//ÉùÃ÷Ò»¸öÕûÐÍÒýÓÃrefVal£¬refValÖ¸Ïòival
-				int &refVal;//ÒýÓÃÏÈ³õÊ¼»¯ÔÙÖ¸Ïò£¨³õÊ¼»¯ºó»á°ÑÒýÓÃºÍ±äÁ¿³õÊ¼Öµ°ó¶¨£©
-	ÒýÓÃ¼´±ðÃû
-		refVal = 2;//2¸³¸ørefVal°ó¶¨µÄ¶ÔÏóÉÏ£¬Êµ¼Ê¾ÍÊÇival
-		int ii = refVal//Óëii = ival½á¹ûÏàÍ¬
-		»ñÈ¡ÒýÓÃµÄÖµ£¬Êµ¼ÊÉÏÊÇ»ñÈ¡ÁËÓëÒýÓÃ°ó¶¨µÄ¶ÔÏóµÄÖµ
-	ÒýÓÃµÄ¶¨Òå
-		Ò»ÌõÓï¾ä¿ÉÒÔ¶à¸öÒýÓÃ£¬ÒýÓÃ±êÊ¶·û±ØÐëÓÉ&¿ªÍ·¡£
-		ÒýÓÃ²»ÄÜÓë×ÖÃæÖµ»òÕß±í´ïÊ½¼ÆËã½á¹û°ó¶¨,±ØÐëÊÇÒ»¸ö¶ÔÏó¡£ÒýÓÃºÍ±»ÒýÓÃµÄÊý¾ÝÀàÐÍ±ØÐëÏàÍ¬¡£
+å¤åˆç±»åž‹
+	åŸºäºŽå…¶ä»–ç±»åž‹å®šä¹‰çš„ç±»åž‹
+	å¼•ç”¨å’ŒæŒ‡é’ˆ
+		å¼•ç”¨
+			ä¸ºå¯¹è±¡èµ·äº†å¦ä¸€ä¸ªåå­—ï¼Œå¼•ç”¨ç±»åž‹å¼•ç”¨å¦ä¸€ä¸ªç±»åž‹ï¼Œ
+			å£°æ˜Žç¬¦å†™æˆ&dæ¥å®šä¹‰å¼•ç”¨ç±»åž‹ï¼Œdæ˜¯å£°æ˜Žçš„å˜é‡å
+			egï¼šint ival = 1024;//å£°æ˜Žå®šä¹‰ä¸€ä¸ªæ•´åž‹å˜é‡ivalå¹¶èµ‹å€¼2014
+				int &refVal = ival;//å£°æ˜Žä¸€ä¸ªæ•´åž‹å¼•ç”¨refValï¼ŒrefValæŒ‡å‘ival
+				int &refVal;//å¼•ç”¨å…ˆåˆå§‹åŒ–å†æŒ‡å‘ï¼ˆåˆå§‹åŒ–åŽä¼šæŠŠå¼•ç”¨å’Œå˜é‡åˆå§‹å€¼ç»‘å®šï¼‰
+	å¼•ç”¨å³åˆ«å
+		refVal = 2;//2èµ‹ç»™refValç»‘å®šçš„å¯¹è±¡ä¸Šï¼Œå®žé™…å°±æ˜¯ival
+		int ii = refVal//ä¸Žii = ivalç»“æžœç›¸åŒ
+		èŽ·å–å¼•ç”¨çš„å€¼ï¼Œå®žé™…ä¸Šæ˜¯èŽ·å–äº†ä¸Žå¼•ç”¨ç»‘å®šçš„å¯¹è±¡çš„å€¼
+	å¼•ç”¨çš„å®šä¹‰
+		ä¸€æ¡è¯­å¥å¯ä»¥å¤šä¸ªå¼•ç”¨ï¼Œå¼•ç”¨æ ‡è¯†ç¬¦å¿…é¡»ç”±&å¼€å¤´ã€‚
+		å¼•ç”¨ä¸èƒ½ä¸Žå­—é¢å€¼æˆ–è€…è¡¨è¾¾å¼è®¡ç®—ç»“æžœç»‘å®š,å¿…é¡»æ˜¯ä¸€ä¸ªå¯¹è±¡ã€‚å¼•ç”¨å’Œè¢«å¼•ç”¨çš„æ•°æ®ç±»åž‹å¿…é¡»ç›¸åŒã€‚
 			int i = 1024,i2 = 2048;
-			int &r = i,r2 = i2;//iºÍr°ó¶¨£¬rÒýÓÃi¡£i2¸³Öµ¸ør2
+			int &r = i,r2 = i2;//iå’Œrç»‘å®šï¼Œrå¼•ç”¨iã€‚i2èµ‹å€¼ç»™r2
 
-	Ö¸Õë£ºÖ¸ÏòµÄÁíÒ»ÖÖ¸´ºÏÀàÐÍ
-		ÉùÃ÷·û£º*d
-		dÎª±äÁ¿Ãû
-		¶ÔÆäËü¶ÔÏóµÄ¼ä½Ó·ÃÎÊ
-			±¾Éí¾ÍÊÇ¶ÔÏó£¬¿ÉÒÔ¶ÔÖ¸Õë¸³Öµ»ò¿½±´¡£ÔÚÉúÃüÖÜÆÚÄÚ¿ÉÒÔÏÈºóÖ¸Ïò¼¸¸ö²»Í¬µÄ¶ÔÏó
-			²»ÐèÒªÔÚ¶¨ÒåÊ±¸³³õÊ¼Öµ
+	æŒ‡é’ˆï¼šæŒ‡å‘çš„å¦ä¸€ç§å¤åˆç±»åž‹
+		å£°æ˜Žç¬¦ï¼š*d
+		dä¸ºå˜é‡å
+		å¯¹å…¶å®ƒå¯¹è±¡çš„é—´æŽ¥è®¿é—®
+			æœ¬èº«å°±æ˜¯å¯¹è±¡ï¼Œå¯ä»¥å¯¹æŒ‡é’ˆèµ‹å€¼æˆ–æ‹·è´ã€‚åœ¨ç”Ÿå‘½å‘¨æœŸå†…å¯ä»¥å…ˆåŽæŒ‡å‘å‡ ä¸ªä¸åŒçš„å¯¹è±¡
+			ä¸éœ€è¦åœ¨å®šä¹‰æ—¶èµ‹åˆå§‹å€¼
 */
 int* ip1, * ip2;
 int ival = 42;

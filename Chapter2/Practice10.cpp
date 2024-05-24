@@ -1,6 +1,6 @@
-#include "iostream"
-extern int a;//ÉùÃ÷±äÁ¿a£¬extern´ú±íÍâ²¿À´×ÔPractice9ÀïÒÑ¾­ÉùÃ÷¶¨ÒåºÃµÄµÄÈ«¾Ö±äÁ¿
-int main() {//Í¬Ò»¸ö¹¤³ÌÎÄ¼şÀï£¬mainº¯ÊıÖ»ĞèÒªĞ´Ò»¸ö
+ï»¿#include "iostream"
+extern int a;//å£°æ˜å˜é‡aï¼Œexternä»£è¡¨å¤–éƒ¨æ¥è‡ªPractice9é‡Œå·²ç»å£°æ˜å®šä¹‰å¥½çš„çš„å…¨å±€å˜é‡
+int main() {//åŒä¸€ä¸ªå·¥ç¨‹æ–‡ä»¶é‡Œï¼Œmainå‡½æ•°åªéœ€è¦å†™ä¸€ä¸ª
 	std::cout << a;
 	return 0;
 }

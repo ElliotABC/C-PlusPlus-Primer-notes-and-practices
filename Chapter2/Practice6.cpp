@@ -1,11 +1,11 @@
-#include "iostream"
+ï»¿#include "iostream"
 int main() {
 	std::cout << "a really,really long string literal "
 		"that spans two lines" << std::endl;
-	//×ªÒåÐòÁÐ
+	//è½¬ä¹‰åºåˆ—
 	std::cout << '\n';
 	std::cout << "\tHi!This statement has one tab\n";
 	std::cout << "\t\tThis statement has two tab"<<'\n';
 	std::cout << "\t\t\t" << "Next character is " << '\115' << '\n';
-	//std::cout<<"\1234"	Õâ¸ö×ªÒåÐòÁÐÖ»»áÊ¶±ðÇ°Èý¸ö°Ë½øÖÆÊý×Ö£¨123£©£¬ºóÃæÄÇ¸ö4Ö»»áµ±×÷×Ö·û£¬´ó¶àÊý»úÆ÷charÕ¼8Î»£¬»á±¨´í
+	//std::cout<<"\1234"	è¿™ä¸ªè½¬ä¹‰åºåˆ—åªä¼šè¯†åˆ«å‰ä¸‰ä¸ªå…«è¿›åˆ¶æ•°å­—ï¼ˆ123ï¼‰ï¼ŒåŽé¢é‚£ä¸ª4åªä¼šå½“ä½œå­—ç¬¦ï¼Œå¤§å¤šæ•°æœºå™¨charå 8ä½ï¼Œä¼šæŠ¥é”™
 }
