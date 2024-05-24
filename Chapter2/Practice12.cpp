@@ -7,7 +7,14 @@ int main() {
 	val = &val1;
 	std::cout << "The value of val is " << *val << '\n';
 	std::cout << "The address of val is " << val << '\n';
-	std::cout << "The value of object directed by ptr is " << val1;
+	std::cout << "The value of object directed by ptr is " << val1 << '\n';
+
+	int ival = 1024;
+	int* pi = &ival;
+	int** ppi = &pi;
+	std::cout << "The value of ival is " << ival << '\n';//输出ival值
+	std::cout << "The value of *pi is " << *pi << '\n';//输出*pi指针的值
+	std::cout << "The value of **ppi is " << &ppi;//输出**ppi指针的地址
 }
 
 //2.19
@@ -46,4 +53,15 @@ if (*p)//如果*p指针数值为0则为false，1则为true
 2.24
 因为void可以存储任意数据类型对象的地址，int地址赋值给void *p合法
 lp非法因为*lp是long数据类型，但是i是整型，数据类型不一样所以不合法
+*/
+
+/*
+2.3.3
+2.25
+a:int *ip,i,&r = i;
+ip为整型指针，i为变量。&r引用i
+b:int i, *ip = 0;
+声明一个整型变量i，声明一个整型*ip指针并定义赋值0
+c:int *ip,ip2;
+声明一个整型指针变量*ip和整型变量ip2
 */
