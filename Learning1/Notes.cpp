@@ -1,4 +1,8 @@
-﻿#include "iostream"
+﻿#include <iostream>//vs导入用“”，vscode导入用<>,vscode不兼容“”，最好用<>
+
+int main(){
+	return 0;
+}
 /*
 整型：带符号和不带符号
 	带符号：int，short，long，long long
