@@ -296,7 +296,7 @@ int *p1,*p2;//p1和p2都指向int的指针
 	*个数确定指针级别。**表示指向指针的指针，***表示指向指针的指针的指针
 	eg：int ival = 1024;
 		int *pi = &ival;//声明*pi指针为int并把ival地址赋值给*pi指针
-		int **ppi = &pi;//*pi的地址也就是ival的地址赋值给**ppi指针
+		int **ppi = &pi;// *pi的地址也就是ival的地址赋值给**ppi指针
 */
 
 /*
@@ -311,10 +311,42 @@ const引用：把引用绑定到对象上
             const int &b = a;//b引用a
             r1= 42:；//错误，已经引用不能再赋值
             int &c = a;//错误，int不能喝const int引用
-    初始化常量允许初始值为任意表达式
+    ！！！引用类型必须与被引用对象类型一致！！！
+	例外：初始化常量允许初始值为任意表达式（对被引用对象数据类型没有限制）
         int i = 42; •
         const int &r1 = i;//允许将 const int&绑定到一个普通 int 对象上
         const int &r2 = 42;//正确：r1是一个常量引用
         const int &r3 = rl * 2； // 正确：r3是一个常量引用
-        int &r4 = r1 * 2;//错误：r4是一个普通的非常量引用 
+        int &r4 = r1 * 2;//错误：r4是一个普通的非常量引用
+	！！！指针类型必须与其所指对象的类型相同！！！
+	指针和const：指针指向常量或非常量3
+		指向常量的值：不能改变所指对象的值
+		eg：
+		const double pi =3.14;//正确，pi是常量值无法被改变
+		double *ptr = &pi;//错误，不能用变量指针指向常量引用
+		const double *cptr = &pi//正确，常量指针cptr可以指向常量pi引用
+		*cptr = 42;//错误，不能直接给指针赋值
+
+const指针：把*放在const关键词之前说明指针是一个常量，不变的是指针本身的值而不是指向的值
+	eg:	int errNum = 0;
+		int *const curErr = &errNum;//curErr指向errNum
+		const double pi = 3.1415926;
+		const double *const pip = &pi;
+
+！！！顶层const：指针本身就是个常量！！！
+！！！底层const：指针所指对象是常量！！！
+const int *const p3；
+第一个const不需要初始化（指针的内容），第二个*const指针常量必须初始化（指针所指对象的值）
+指针内容不需要初始化但指向对象必须初始化
+例外：整形常量a不能直接改变值，只能通过另一个整形常量指针b赋值给a
+区别：int i = 0;
+	 int *const p1 = &i;//不能改变p1值，顶层const，指针本身
+	 const int ci = 42;//不能改变ci值，顶层const，指针本身
+	 const int *p2 = &ci;//可以改变p2值，底层const。整形常量指针p2指向ci引用（指针所指向的对象）
+	 const int *const p3 = p2//左边是底层const（指针所指对象），右边是顶层const（指针本身）
+	（底层const：	（顶层const：指针本身是常量）
+	所指对象是常量）	
+	const int &r = ci;//声明引用的const都是底层const。整形常量引用r被赋值为ci，所以必然是对引用所指对象赋值
+	顶层const不受影响
+	
 */
