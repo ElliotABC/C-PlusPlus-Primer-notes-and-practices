@@ -1,4 +1,4 @@
-//ÎŞÏŞÑ­»·£ºunsigned integerÔÚ-1Ê±×Ô¶¯×ª»»³É4294967275
+ï»¿//æ— é™å¾ªç¯ï¼šunsigned integeråœ¨-1æ—¶è‡ªåŠ¨è½¬æ¢æˆ4294967275
 int main() {
 	for (unsigned int u = 10; u >= 0; --u)
 		std::cout << u << std::endl;

@@ -1,6 +1,6 @@
-#include "iostream"
+ï»¿#include "iostream"
 int main() {
 	unsigned u1 = 42, u2 = 10;
-	std::cout << u2 - u1 << std::endl;//Êä³öÈ¡Ä£µÄÖµ
-	std::cout << u1 - u2 << std::endl;//Êä³ö32
+	std::cout << u2 - u1 << std::endl;//è¾“å‡ºå–æ¨¡çš„å€¼
+	std::cout << u1 - u2 << std::endl;//è¾“å‡º32
 }

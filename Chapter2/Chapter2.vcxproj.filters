@@ -33,5 +33,31 @@
     <ClCompile Include="Practice4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Practice6.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice7.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice8.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice9.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice10.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice11.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice12.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Learning1\Sales_item.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

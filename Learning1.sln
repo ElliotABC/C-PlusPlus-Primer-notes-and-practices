@@ -9,6 +9,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication1", "Cons
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter2", "Chapter2\Chapter2.vcxproj", "{F2EAF53A-28B8-4357-ADA1-2B99B4C9E85C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "好玩的", "好玩的\好玩的.csproj", "{0D426E39-D6AA-4574-85E9-24A58DFB9700}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "指针", "指针\指针.vcxproj", "{DC6F69E6-A142-4B15-8232-BE9767376BA8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "命令驱动", "命令驱动\命令驱动.vcxproj", "{7BCDA264-3063-4649-AE08-6220357407BD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "命令驱动-进阶", "命令驱动-进阶\命令驱动-进阶.vcxproj", "{2F2805D7-CC6F-4ADF-BDE7-4ADC97D50286}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +59,18 @@ Global
 		{F2EAF53A-28B8-4357-ADA1-2B99B4C9E85C}.Release|x64.Build.0 = Release|x64
 		{F2EAF53A-28B8-4357-ADA1-2B99B4C9E85C}.Release|x86.ActiveCfg = Release|Win32
 		{F2EAF53A-28B8-4357-ADA1-2B99B4C9E85C}.Release|x86.Build.0 = Release|Win32
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Debug|x64.Build.0 = Debug|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Debug|x86.Build.0 = Debug|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Release|x64.ActiveCfg = Release|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Release|x64.Build.0 = Release|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Release|x86.ActiveCfg = Release|Any CPU
+		{0D426E39-D6AA-4574-85E9-24A58DFB9700}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
