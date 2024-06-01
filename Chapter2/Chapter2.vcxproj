@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Learning1\Notes.cpp" />
+    <ClCompile Include="C:\Users\吴靖涛\Documents\WeChat Files\wxid_f5ju7artngvp12\FileStorage\File\2024-06\Practice13.cpp" />
+    <ClCompile Include="C:\Users\吴靖涛\Documents\WeChat Files\wxid_f5ju7artngvp12\FileStorage\File\2024-06\Practice14.cpp" />
     <ClCompile Include="Practice10.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
