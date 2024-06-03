@@ -350,3 +350,25 @@ const int *const p3；
 	顶层const不受影响
 	
 */
+
+/*
+constexpr和常量表达式
+	常量表达式：值不会改变并且在编译过程中就能得到计算结果的表达式（即时）
+		字面值->常量表达式->const
+		数据类型和初始值决定是否常量表达式：
+			const int max_files = 20;		//max_files是常量表达式
+			const int limit = max_files + 1;//limit是常量表达式
+			int staff_size = 27;			//staff_size不是常量表达式，是变量
+			const int sz = get_size();		//sz不是常量表达式。虽然是常量，但具体值在运行时才会获取到（赋值为一个函数返回值），不是常量表达式（非即时）
+	constexpr变量（C++11 Allowed）
+		可以验证变量值是否为常量表达式
+		声明为constexpr的变量一定是常量，必须用常量表达式初始化
+		eg：constexpr int mf = 20;			//20是常量表达式
+			constexpr int limit = mf + 1;	//mf + 1是常量表达式
+			constexpr int sz = size();		//只有当size()是一个constexpr函数（即时），语句才会正确。
+											//如果不是constexpr函数，不是常量表达式，语句错误
+*/
+
+/*
+字面值类型：
+*/

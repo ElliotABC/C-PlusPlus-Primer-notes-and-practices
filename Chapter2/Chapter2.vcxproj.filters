@@ -60,6 +60,9 @@
     <ClCompile Include="C:\Users\吴靖涛\Documents\WeChat Files\wxid_f5ju7artngvp12\FileStorage\File\2024-06\Practice14.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Practice16.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Learning1\Sales_item.h">
