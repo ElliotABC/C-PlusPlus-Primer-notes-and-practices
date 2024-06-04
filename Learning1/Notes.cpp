@@ -404,3 +404,39 @@ constexpr int *q = nullptr	//q是一个常量指针，
 					const pstring cstr = 0;	//const pstring相当于const char
 					const pstring *ps;		//*ps指针的对象指向char的常量指针
 */
+
+/*
+auto类型说明符（C++11 Allowed）
+	让编译器分析表达式所属类型（通过初始值来推断变量的类型）
+	忽略顶层const(指针本身)，保留底层const(指针所指对象)。
+	如果给初始值绑定一个引用，此时常量就不是顶层常量而是低层常量
+		const int ci = i,&cr = ci;
+		auto b = ci;	//b是一个整数（ci的顶层const特性被忽略了）
+		auto c = cr;	//c是一个整数（cr是ci别名，ci本身是一个顶层const）
+		auto d = &i;	//d是一个整型指针（整数地址就是指向整数的指针）
+		auto e = &ci;	//e是一个指向整数常量的指针（对常量对象取地址是一种低层const）
+	是顶层const
+		const auto f = ci；	//如果ci的推演类型是int，f则是const int
+	引用类型为auto
+		auto &g = ci;		//g是一个整型常量引用，绑定到ci
+		auto &h = 42;		//错误：不能为为非常量（变量）引用绑定字面值
+		const auto &j = 42;	//正确：可以为常量引用绑定字面值
+	必须有初始值：
+		auto item = val1 + val2;//item初始化为val1和val2相加的结果
+		eg：val1是int，val2是int，那么item为int
+		val1是double，val2是double，那么item也是double
+		val1是Sales_item,val2是Sales_item,那么item也是Sales_item
+	可以一个语句声明多个变量：
+		auto i = 0,*p = &i;		//正确，i是整数，*p是整型指针，指向i的引用
+		auto sz = 0,pi = 3.14;	//错误：sz为整型，pi是double，sz和pi数据类型不一致
+
+	复合类型、常量和auto
+		有时候auto推断出来的和初始值不完全一样
+		！！！如果引用被当作auto变量的初始值时，真正参与初始化的是引用对象的值
+		---->>引用对象的类型作为auto的类型
+			eg：int i = 0,&r = i;//r引用变量i，变量i初始值为整数0
+				auto a = r;//a被赋值引用r，a是一个整数
+	eg：auto k = ci,&l - i;		//k是整数，l是整型引用
+		auto &m = ci,*p = &ci;	//m是对整型常量的引用，p是指向整型常量的指针
+		auto &n i,*p2 = &ci;	//错误：i数据类型为int，而&ci数据类型为const int，不能用auto
+*/
