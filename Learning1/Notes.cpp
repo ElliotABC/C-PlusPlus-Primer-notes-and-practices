@@ -359,7 +359,9 @@ constexpr和常量表达式
 			const int max_files = 20;		//max_files是常量表达式
 			const int limit = max_files + 1;//limit是常量表达式
 			int staff_size = 27;			//staff_size不是常量表达式，是变量
-			const int sz = get_size();		//sz不是常量表达式。虽然是常量，但具体值在运行时才会获取到（赋值为一个函数返回值），不是常量表达式（非即时）
+			const int sz = get_size();		//sz不是常量表达式。虽然是常量，
+											但具体值在运行时才会获取到（赋值为一个函数返回值），
+											不是常量表达式（非即时）
 	constexpr变量（C++11 Allowed）
 		可以验证变量值是否为常量表达式
 		声明为constexpr的变量一定是常量，必须用常量表达式初始化
@@ -370,5 +372,35 @@ constexpr和常量表达式
 */
 
 /*
-字面值类型：
+字面值类型(Literal type)：声明constexpr时用到的限制后的类型
+	简单，值显而易见，容易得到
+	字面值类型典型例子：
+	1.算术类型（int，double）
+	2.引用（&a）	！如果定义成constexpr，初始值必须是存储于某个固定地址中的对象或者nullptr或者0！
+	3.指针（*a）	！如果定义成constexpr，初始值必须是存储于某个固定地址中的对象或者nullptr或者0！
+	不是字面值类型，也不能被定义成constexpr
+	1.Sales_item,IO库（iostream）,string类型
+
+指针和constexpr
+在constexpr定义的指针中，constexpr只对指针本身有效，对所指对象无关
+const int *p = nummptr;		//p是指向常量的指针
+constexpr int *q = nullptr	//q是一个常量指针，
+							constexpr所定义的对象：指针*q是顶层const（指针本身是constexpr）
+*/
+
+/*
+处理类型
+	类型别名：同意词->某种类型
+	目的：自定义基本数据类型的名字。例如typedef double wages。
+	！！！实际上使用wages和使用double相同的（给数据类型设定快捷方式）！！！
+	简洁明了，易于理解和使用
+	typedef double wages;//wages是double的同义词
+	typedef wages base,*p//base是double的同义词，p是doible*的同义词
+	C++11 Allowed：别名声明
+		using SI = Sales_item;//SI是Sales_item的同义词
+			别名	别名
+				指针和常量的类型别名
+					typedef char *pstring	//使用char和使用指针*pstring相同
+					const pstring cstr = 0;	//const pstring相当于const char
+					const pstring *ps;		//*ps指针的对象指向char的常量指针
 */
