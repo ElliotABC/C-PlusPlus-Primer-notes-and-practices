@@ -407,7 +407,7 @@ constexpr int *q = nullptr	//q是一个常量指针，
 
 /*
 auto类型说明符（C++11 Allowed）
-	让编译器分析表达式所属类型（通过初始值来推断变量的类型）
+	让编译器分析表达式所属类型（必须有初始值来推断变量的类型）
 	忽略顶层const(指针本身)，保留底层const(指针所指对象)。
 	如果给初始值绑定一个引用，此时常量就不是顶层常量而是低层常量
 		const int ci = i,&cr = ci;
@@ -439,4 +439,45 @@ auto类型说明符（C++11 Allowed）
 	eg：auto k = ci,&l - i;		//k是整数，l是整型引用
 		auto &m = ci,*p = &ci;	//m是对整型常量的引用，p是指向整型常量的指针
 		auto &n i,*p2 = &ci;	//错误：i数据类型为int，而&ci数据类型为const int，不能用auto
+*/
+
+/*
+decltype类型指示符(C++11 Allowed)
+	让编译器分析表达式所属类型（不需要初始值来推断变量的类型）
+	不需要表达式的值初始化。分析表达式并得到类型，不计算实际值
+	表达式是变量不需要初始化
+	表达式是引用或指针必须初始化
+		decltype(f()) sum = x;	//sum的类型就是函数f返回类型
+	处理顶层const：
+		表达式是变量，返回该变量的类型（包括顶层const和引用）
+			const int ci = 0,&cj = ci;
+			decltype(ci) x = 0;		//x的类型是const int
+			delctype(cj) y = x;		//cj引用是ci，ci是const int，y是const int，y绑定到变量x
+			delctype(cj) z;			//错误，z是一个引用，必须初始化
+		表达式不是变量，返回表达式结果对应的类型
+			//decltype的结果可以是引用类型
+			int i = 42,*p = &i,&r = i;
+			decltype(r + 0) b;//正确，r+0的结果是int，所以b是一个未初始化的int
+			decltype(*p) c;	//错误：c是int&，必须初始化、
+	decltype使用不加括号变量，结果：该变量的类型
+	decltype使用一层或多层括号，编译器当作表达式，得到引用类型
+		decltype ((a))双层括号a的结果必定是引用
+		decltype (b)单层括号里b是变量的话结果不是引用，b是引用的话结果必定是引用
+		eg：decltype((i)) d;	//错误：((i))是引用i，所以d是int&，必须初始化
+			decltype(i) e;		//正确：（i）是引用，e是一个未初始化的int
+*/
+
+/*
+自定义数据类型
+	数据类型：一组相关的数据元素组织在一起，使用他们的策略和方法
+		eg：Sales_item类
+			把ISBN编号、售出量和销售收入等数据组织在一起
+			提供isbn函数、>>、<<、+、+=等运算操作
+			Sales_item类就是一个数据结构
+			istream
+			ostream
+			string
+			……
+定义Sales_data类型
+	
 */
