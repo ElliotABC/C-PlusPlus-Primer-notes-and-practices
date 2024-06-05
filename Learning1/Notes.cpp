@@ -479,5 +479,22 @@ decltype类型指示符(C++11 Allowed)
 			string
 			……
 定义Sales_data类型
-	
+	示例：
+	struct Sales_data {
+	std::string bookNo;
+	unsigned units_sold = 0;
+	double revenue = 0.0;
+	};//！！！必须在结束的花括号后加分号；因为后面可以加变量名表示对该对象的定义！！！
+	Sales_data accum,trans,*salesptr;
+
+	struct关键词定义Sales_data自定义类型
+	紧接类名Sales_data和类体（花括号包围，可以为空）
+	与内部必须唯一，与外部可以重复
+类数据成员
+	数据成员定义了类的对象的具体内容
+	每个对象都有自己的一份数据成员拷贝，修改一个对象的数据成员不会影响其他Sales_data的对象
+	定义类数据成员方法和定义平台变量相同
+
+	类内初始值(C++11 Allowed)
+		类内初始值可以在创建对象的时候初始化数据成员->没有初始值的数据成员会被默认初始化
 */
