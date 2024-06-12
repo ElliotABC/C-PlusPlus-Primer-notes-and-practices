@@ -1,4 +1,24 @@
 ﻿#include <iostream>//vs导入用“”，vscode导入用<>,vscode不兼容“”，最好用<>
+//#include作用：预处理器检测到后，自动把头文件的内容替换#include
+//#define:头文件保护符,依赖于预处理变量状态：已定义、未定义。#define把一个名字设为预处理变量
+//#ifdef：头文件保护符，检查指定的预处理变量是否已经定义：当变量已定义时为真
+//#ifndef：头文件保护符，检查指定的预处理变量是否已经定义：当变量未定义时为真
+//#endif：头文件保护符，检查结果是否为真：如果检测到结果为真，执行后续操作直到遇到#endif为止
+/*避免重复包含发生：
+//非活动预处理块(避免重复包含头文件，一般用在一个头文件a被包含在另一个头文件b里)：
+//如果在头文件的开始处，使用 #ifndef 指令检查是否已定义了某个特定的宏（在这个例子中是 SALES_DATA_H）。
+//如果没有定义该宏（即这是第一次包含该头文件），则使用 #define 指令定义它，并继续包含头文件的其余部分。
+//如果已经定义了该宏（即这不是第一次包含该头文件），则 #ifndef 条件失败，并且头文件的其余部分将不会被包含。
+#ifndef SALES_DATA_H
+#define SALES_DATA_H
+#include <string>
+struct Sales_data{
+	std::string bookNo;
+	unsigned units_sold = 0;
+	double revenue = 0.0;
+};
+#endif
+*/
 
 int main(){
 	return 0;
@@ -468,7 +488,7 @@ decltype类型指示符(C++11 Allowed)
 */
 
 /*
-自定义数据类型
+struct自定义数据类型
 	数据类型：一组相关的数据元素组织在一起，使用他们的策略和方法
 		eg：Sales_item类
 			把ISBN编号、售出量和销售收入等数据组织在一起
@@ -497,4 +517,111 @@ decltype类型指示符(C++11 Allowed)
 
 	类内初始值(C++11 Allowed)
 		类内初始值可以在创建对象的时候初始化数据成员->没有初始值的数据成员会被默认初始化
+*/
+
+//类通常被定义在头文件里：
+//		eg：string.h		iostream.h			Sales_data.h
+
+/*
+使用Sales_data类
+	In Practice20.cpp，Practice21.cpp
+*/
+
+//代码范例1
+/*
+Practice20.cpp:代码开始
+struct Sales_data {
+	std::string bookno;//定义一个std::string类型的成员变量bookno。类（class）类型成员
+	std::string bookname;
+	unsigned units_sold = 0;
+	double revenue = 0.0;//定义一个double类型的成员变量revenue，初始化值为0.0
+	double price = 0.0;
+};
+
+int main() {
+	Sales_data book1;
+	book1.bookno = "12345";
+	book1.bookname = "Example Book";
+	book1.price = 10.99;
+	book1.units_sold = 5;
+	book1.revenue = book1.units_sold * book1.price;
+
+	std::cout << "Book Name: " << book1.bookname << std::endl;
+	std::cout << "Units Sold: " << book1.units_sold << std::endl;
+	std::cout << "Revenue: " << book1.revenue << std::endl;
+*/
+
+//代码范例2
+/*
+Practice21.cpp:代码开始
+//2.6.2
+//2.41
+#include <iostream>
+#include <string>
+#include "E:\VisualStudio\MS_pre_C11\2\Sales_data.h"
+
+struct Sales_item {
+	std::string bookno;//定义一个std::string类型的成员变量bookno。类（class）类型成员
+	std::string bookname;
+	unsigned units_sold = 0;
+	double revenue = 0.0;//定义一个double类型的成员变量revenue，初始化值为0.0
+	double price = 0.0;
+};
+
+int main() {
+	Sales_data data1, data2;
+	//读入data1，data2的代码
+	//检查data1和data2的ISBN是否相同代码
+	//如果相同，求data1和data2总和
+	double price = 0;//书的单价，用于计算销售收入
+	std::cin >> data1.bookNo >> data1.units_sold >> price;//读入第1笔交易：ISBN、销售数量，单价
+	data1.revenue = data1.units_sold * price;//计算销售收入
+
+	std::cin >> data2.bookNo >> data2.units_sold >> price; //读入第2笔交易：ISBN、销售数量，单价
+	data2.revenue = data2.units_sold * price;//计算销售收入
+
+	if (data1.bookNo == data2.bookNo) {//判断data1和data2的ISBN是否相同
+		unsigned totalCut = data1.units_sold + data2.units_sold;//计算总销量
+		double totalRevenue = data1.revenue + data2.revenue;//计算总收入
+		std::cout << "ISBN:"<<data1.bookNo << '\n' << "TotalCut:" << totalCut << '\n' << "Total Revenue:" << totalRevenue<<'\n';
+		//输出：ISBN、总销售量、总销售额、平均价格
+
+		if (totalCut != 0)
+			std::cout << "Average Revenue:" << totalRevenue / totalCut << std::endl;//总销售量不为0则输出单价
+		else
+			std::cout << "No Sales!" << std::endl;//为0则输出(No Sales)
+		return 0;//标志成功
+	}
+	else {//不相同的ISBN
+		std::cerr << "Data must refer to the same ISBN" << std::endl;//输出Data must refer to the same ISBN
+		return -1;//标志失败
+	}
+}
+
+
+输入：
+1
+2
+3
+1
+2
+3
+
+输出：
+ISBN:1
+TotalCut:4
+Total Revenue:12
+Average Revenue:3
+*/
+
+
+/*
+Conclusion:
+类型是C++编程的基础。
+类型规定了其对象的存储要求和所能执行的操作。C++语言提供了一套基础内置类
+型,如int和char等,这些类型与实现它们的机器硬件密切相关。类型分为非常量和常
+量,一个常量对象必须初始化,而且一旦初始化其值就不能再改变。此外,还可以定义复
+合类型,如指针和引用等。复合类型的定义以其他类型为基础。
+C++语言允许用户以类的形式自定义类型。C++库通过类提供了一套高级抽象类型,
+如输入输出和string等。
 */

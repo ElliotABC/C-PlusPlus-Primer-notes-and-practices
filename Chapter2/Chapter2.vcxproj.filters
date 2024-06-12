@@ -72,9 +72,27 @@
     <ClCompile Include="Practice19.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Practice20.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice21.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice22.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Review1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Learning1\Sales_item.h">
+    <ClInclude Include="C:\Users\吴靖涛\Downloads\MS_pre_C11\1\Sales_item.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MS_pre_C11\2\Sales_data.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sales_data.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
