@@ -18,5 +18,8 @@
     <ClCompile Include="Chapter3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Notes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
