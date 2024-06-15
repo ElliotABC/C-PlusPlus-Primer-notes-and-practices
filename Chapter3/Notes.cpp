@@ -44,7 +44,7 @@
 	编译器应该从操作符(::)左侧名字所示的作用域中寻找右侧名字
 		std::cin使用作用域操作符（::）：使用命名空间std中的名字cin
 	 
-标准库类型stringg：可变长的字符序列
+标准库类型string：可变长的字符序列
 	必须包含string头文件(在命名空间std中)
 	#include <string>
 	using std::string;
@@ -76,9 +76,47 @@
 
 		读取string对象
 			使用IO操作符读写string对象
+			(只会读取第一个真正字符到下一处空白为止,忽略空格：输入Hello World，输出HelloWorld)
 				eg：
 				#include <iostream>
 				#include <string>
 				using std::cin
 				using std::cout
+
+				string s1,s2;
+				cin>>s1>>s2;
+				cout<<s1<<s2<<endl;
+		读取未知数量的string对象
+			eg:
+			#include <iostream>
+			#include <string>
+			using std::cin;
+			using std::cout;
+			using std::string;
+			using std::endl;
+			int main() {
+				string word;
+				while (cin >> word)
+					cout << word << endl;
+				return 0;
+			}
+		getline读取一整行（保留输入时的空白符）
+			getline替代>>
+			一遇到换行符就结束读取操作并返回结果
+			getline函数的参数：1.输入流
+							   2.string对象
+			eg:using std::cin;
+			   using std::cout;
+			   using std::endl;
+			   using std::string;
+			   using std::getline;
+			   int main() {
+					string line;//每次读入一整行，直到文件末尾
+					while (getline(cin, line))
+						cout << line << endl;
+			   return 0;
+			   }
+		string的empty和size操作
+			empty函数：string的一个成员函数。根据string对象是否为空返回一个对应的布尔值
+					   和Sales_item类的ISBN成员一样
 */
