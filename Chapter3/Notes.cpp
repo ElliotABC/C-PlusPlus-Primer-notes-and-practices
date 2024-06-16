@@ -119,4 +119,51 @@
 		string的empty和size操作
 			empty函数：string的一个成员函数。根据string对象是否为空返回一个对应的布尔值
 					   和Sales_item类的ISBN成员一样
+			size函数：返回string对象的长度（字符的个数）
+					输入必须超过80个字符
+					返回无符号整型数
+			点操作符：.
+					使用点操作符指明哪个对象执行了empty或size或其他函数
+					!line.empty()
+					line.size()
+			string::size_type类型
+				size函数返回string::size_type类型的值(无符号类型的值)
+				size_type在类string中定义
+				所有存放string类的size函数返回值的变量，都应该是string::size_type
+				auto或decltype推断变量的类型
+					auto len = line.size();		//len变量类型为string::size_type
+					decltype var = line.size();	//var变量类型为string::size_type
+		比较string对象
+			比较运算符(大小写敏感)
+				相等性运算符：==和！=检查两个string对象相等或不相等
+				关系运算符：<、<=、>、>=检查一个string是否小于、小于等于、大于、大于等于另一个string对象
+				eg:
+				string str = "Hello";
+				string phrase = "Hello World";
+				string slang = "Hiya";
+				//规则1：str小于对象phrase(str长度比phrase小)
+				//规则2：slang大于str也大于phrase
+		为string对象赋值
+			允许把一个对象的值赋给另一个对象
+			eg:
+			string st1(10,'c'),st2;		//st1内容为cccccccccc；str2是一个空字符串
+			st1 = st2	//赋值：用st2副本替换st1的内容，此时st1和st2都是空字符串
+		两个string对象相加
+			左侧运算对象和右侧运算对象串接
+			加法运算符(+)：对string对象使用加法运算符(+)的结果是一个新string对象
+			复合赋值运算符(+=)：右侧string对象内容加到左侧string对象的后面
+		字面值和string对象相加
+			字符串字面值：“hello”只有一个“”和里面的内容
+			string对象：可以指定数据类型的变量(用字符串字面值初始化)
+			!!!字符串字面值和string是不同的类型!!!
+			eg:string s1 = "hello",s2 = "world";
+			   string s3 = s1 + ","+ s2 + '\n';
+			string对象和字符串字面值和字符值面值混合在一起时，必须确保每个加法运算符(+)两侧运算对象至少有一个string
+			eg:
+			string s4 = s1 + ",";		//正确：把一个string对象s1和一个字符串字面值“，”相加
+			string s5 = "hello" + ",";	//错误：两个运算对象“hello”和“，”都不是string
+			//每个加法运算符都有一个运算对象是string
+			string s6 = s1 + "," + "world";//正确：s1 + ","是子表达式tmp，s6为tmp + "world"
+			string s7 = "hello" + "," + s2;//错误：不能把字面值直接相加，加法运算符(+)两侧字少有一个string
+
 */
