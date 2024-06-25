@@ -166,4 +166,38 @@
 			string s6 = s1 + "," + "world";//正确：s1 + ","是子表达式tmp，s6为tmp + "world"
 			string s7 = "hello" + "," + s2;//错误：不能把字面值直接相加，加法运算符(+)两侧字少有一个string
 
+	处理string对象中的字符
+		eg：检查string对象是否空白，改大小写，某个特定字符是否出现
+		！！！使用cctype头文件！！！
+			标准库函数：
+			isalnum(c)		当c是字母或数字时为真
+			isalpha(c)		当c是字母时为真
+			iscntrl(c)		当c是控制字符时为真
+			isdigit(c)		当c是数字时为真
+			isgraph(c)		当c不是空格但可打印时为真
+			islower(c)		当c是小写字母时为真
+			isprint(c)		当c是可打印字符时为真(即c是空格或c具有可视形式)
+			ispunct(c)		当c是标点符号时为真(即c不是控制字符、数字、字母、可打印空白中的一种)
+			isspace(c)		当c是空白时为真(即c是空格、横向制表符、纵向制表符、回车符、换行符、进纸符中的一种)
+			isupper(c)		当c是大写字母时为真
+			isxdigit(c)		当c是十六进制数字时为真
+			tolower(c)		如果c是大写字母, 输出对应的小写字母; 否则原样输出c
+			toupper(c)		如果c是小写字母, 输出对应的大写字母; 否则原样输出c
+		基于范围的for语句
+			范围for(range for)(C++11 Allowed)
+				作用：遍历给定序列中的每个元素并对每个值执行某种操作
+				for (declaration:expression)
+					statement
+				expression是对象表示一个序列，declaration定义一个变量用于访问序列中的基础元素
+				每次迭代declaration变量会被初始化为expression下一个元素值
+				！！！declaration时刻指向下一个值！！！
+				1.查找有多长
+				2.改变字符串中的字符
+					使用引用作为循环控制变量，这个控制变量实际上绑定到序列的每个元素上
+					eg：字符串改写成大小写字母
+						string s("Hello World!!!");
+						//转换成大写形式
+						for (auto& c : s)		//对于s中每一个字符
+							c = toupper(c);
+						cout << s << endl;
 */
