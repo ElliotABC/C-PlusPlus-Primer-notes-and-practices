@@ -60,5 +60,11 @@
     <ClCompile Include="Practice14.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Practice15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice16.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

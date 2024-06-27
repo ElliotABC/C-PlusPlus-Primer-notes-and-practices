@@ -200,4 +200,31 @@
 						for (auto& c : s)		//对于s中每一个字符
 							c = toupper(c);
 						cout << s << endl;
+				3.只处理一部分字符
+					下标
+						下标运算符([])
+							接受输入参数为string::Size_type类型的值：表示要访问的字符的值，返回值是该位置上字符的引用
+							string对象下标从0开始
+								eg：
+								string s("some string");
+								int main() {
+									if (!s.empty())
+										s[0] = toupper(s[0]);
+									cout << s << endl;
+								}
+								string对象s包含两个字符
+									s[0]是第一个字符
+									s[1]是第二个字符
+									s[s.size()-1]是最后一个字符
+					迭代器
+						使用下标执行迭代
+						eg:
+						string s("some string");
+						int main() {
+							for (decltype(s.size()) index = 0; index != s.size() && !isspace(s[index]); ++index)//逻辑与运算符&&，参与运算的两个运算对象都为真，则逻辑与结果为真：TRUE TRUE ---->TRUE	TRUE FALSE ---->FALSE	FALSE FLASE ---->FALSE
+								s[index] = toupper(s[index]);			//只有达到左侧的s.size()后才会执行右侧s[index]
+							cout << s << endl;
+						}
+						使用下标随机访问
+							
 */
