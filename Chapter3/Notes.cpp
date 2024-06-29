@@ -226,5 +226,52 @@
 							cout << s << endl;
 						}
 						使用下标随机访问
-							
+							通过计算得到下标值，直接获取对应位置的字符(不用每次都从前往后依次访问)
+							eg:
+							#include <iostream>
+	#include <string>
+
+	using std::cin;
+	using std::cout;
+	using std::endl;
+	using std::string;
+
+	int main() {
+		const string hexdigits = "0123456789ABCDEF";
+		cout << "Enter a series of numbers between 0 and 15"
+			<< " separated by spaces. Hit ENTER when finished:"
+			<< endl;
+		string result;			//保存十六进制字符串
+		string::size_type n;	//保存输入流读取的数
+		while (cin>>n)
+			if (n<hexdigits.size())
+				result += hexdigits[n];
+		cout << "Your hex number is:" << result << endl;
+	}
+
+	标准库类型vector
+		表示对象的集合
+		1.所有对象的类型都相同
+		2.每个对象都有与之对应的索引-->访问对象
+		容器：容纳其他对象
+		类模板：编译器生成类或函数编写的一份说明(实例化)
+		需要指出编译器把类或函数实例化哪种类型
+		eg:
+		vector<int> ivec;				//ivec保存int类型的对象
+		vector<Sales_item> Sales_vec;	//保存Sales_item类型的对象Sales_vec
+		vector<vector<string>> file;	//该向量的元素是vector对象
+		//编译器根据模板生成了三种不同类型：vector<int>、vector<Sales_item>、vector<vector<string>>
+		
+	定义和初始化vector对象
+		vector模板控制定义和初始化向量的方法
+		！！！初始化vector对象的方法！！！
+		vector<T> v1			//v1是一个空vector,它潜在的元素是T类型的,执行默认初始化
+		vector<T> v2(v1)		//v2中包含有v1所有元素的副本
+		vector<T> v2 = v1		//等价于v2(v1),v2中包含有v1所有元素的副本
+		vector<T> v3(n,val)		//v3包含了n个重复的元素,每个元素的值都是val
+		vector<T> v4(n)			//v4包含了n个重复地执行了值初始化的对象
+		vector<T> v5{a,b,c……}	//v5包含了初始值个数的元素,每个元素被赋予相应的初始值
+		vector<T> v5={a,b,c……}//等价于v5{a,b,c ... }
+		eg:默认初始化vector对象
+
 */
