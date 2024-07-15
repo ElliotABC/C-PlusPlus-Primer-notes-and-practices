@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <RootNamespace>k_means_gui</RootNamespace>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Accord" Version="3.8.0" />
+      <PackageReference Include="Accord.Imaging" Version="3.8.0" />
+      <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
+      <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
+    </ItemGroup>
+
+</Project>
