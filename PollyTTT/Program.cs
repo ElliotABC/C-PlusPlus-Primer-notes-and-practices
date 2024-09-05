@@ -11,10 +11,19 @@ public abstract class Program
     {
         var retry = Policy.Handle<SocketException>()
             .Or<HttpRequestException>()
-            .RetryAsync(3, (exception, retryCount) =>
-            {
-                Console.WriteLine($"重试次数: {retryCount}");
-            });
+            .WaitAndRetryAsync(
+                retryCount: 3,
+                sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+                onRetry: (exception, retryCount, context) =>
+                {
+                    Console.WriteLine(exception.Message);
+                });
+                
+
+            // .RetryAsync(3, (exception, retryCount, context) =>
+            // {
+            //     Console.WriteLine($"重试次数: {retryCount}");
+            // });
 
         // 熔断策略
         var circuitBreaker = Policy.Handle<SocketException>()
