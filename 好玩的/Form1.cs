@@ -9,7 +9,7 @@ namespace 好玩的
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            StartPosition = FormStartPosition.CenterScreen;
             BackColor = Color.White;
             TransparencyKey = Color.White;
             pictureBox1.BackColor = TransparencyKey;
