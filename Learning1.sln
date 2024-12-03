@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "消息队列", "消息队�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelApi", "ChannelApi\ChannelApi.csproj", "{C459B396-368C-4EFD-B86F-0D0E63F2AF4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "订单demo", "订单demo\订单demo.csproj", "{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -477,6 +479,18 @@ Global
 		{C459B396-368C-4EFD-B86F-0D0E63F2AF4B}.Release|x64.Build.0 = Release|Any CPU
 		{C459B396-368C-4EFD-B86F-0D0E63F2AF4B}.Release|x86.ActiveCfg = Release|Any CPU
 		{C459B396-368C-4EFD-B86F-0D0E63F2AF4B}.Release|x86.Build.0 = Release|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Debug|x64.Build.0 = Debug|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Debug|x86.Build.0 = Debug|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Release|x64.ActiveCfg = Release|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Release|x64.Build.0 = Release|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B0732AC-5E55-4E44-88E2-DB85BF54C76E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
