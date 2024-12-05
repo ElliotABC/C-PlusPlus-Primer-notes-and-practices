@@ -4,6 +4,10 @@ namespace 订单demo.Models;
 
 public class OrderRecord
 {
+    public OrderRecord()
+    {
+        Id = SnowFlakeSingle.Instance.NextId();
+    }
     [SugarColumn(IsPrimaryKey =true)]
     public long Id { get; set; } // 明细ID
 

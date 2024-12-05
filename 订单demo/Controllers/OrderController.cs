@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using 订单demo.Dto;
+using 订单demo.Models;
 using 订单demo.Service;
 
 namespace 订单demo.Controllers;
@@ -14,9 +15,9 @@ public class OrderController : BaseController
     }
     
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateOrderDto dto)
+    public async Task<ApiResult> Create([FromBody] CreateOrderDto dto)
     {
         var result = await _orderService.CreateOrder(dto);
-        return result ? Ok() : BadRequest();
+        return Success();
     }
 }

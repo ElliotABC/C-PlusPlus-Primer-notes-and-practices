@@ -16,7 +16,7 @@ public class Order
         Status = OrderStatus.Created; // 默认状态为Created
         PayerId = payerId;
     }
-    public IOrderRepository OrderRepository { get; set; }
+    private IOrderRepository OrderRepository { get; set; }
     
     [SugarColumn(IsPrimaryKey =true)]
     public long Id { get; set; }
@@ -98,5 +98,9 @@ public enum OrderStatus
     // 完成
     Completed,
     // 取消
-    Canceled
+    Canceled,
+    // 退款
+    Refunded,
+    // 发票
+    Invoiced
 }
