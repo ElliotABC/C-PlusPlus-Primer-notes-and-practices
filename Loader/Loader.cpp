@@ -130,12 +130,12 @@ bool inject(DWORD processId, const std::string& dllPath)
 
 int main()
 {
-    std::cout << "Waiting for Genshin Impact or Honkai: Star Rail to start" << std::endl;
+    std::cout << "Waiting for Process to start" << std::endl;
 
     DWORD processId = 0;
     while (!processId)
     {
-        for (const auto& processName : {"GenshinImpact.exe", "YuanShen.exe", "StarRail.exe"})
+        for (const auto& processName : {"notepad.exe", "notepad.exe", "notepad.exe"})
         {
             processId = getProcessIdByName(processName);
             if (processId)
@@ -150,7 +150,7 @@ int main()
     char buffer[MAX_PATH];
     GetModuleFileNameA(nullptr, buffer, MAX_PATH);
     std::string exePath(buffer);
-    exePath = exePath.substr(0, exePath.find_last_of("\\/") + 1) + "library.dll";
+    exePath = exePath.substr(0, exePath.find_last_of("\\/") + 1) + "Library.dll";
 
     std::cout << "Library path: " << exePath << std::endl;
 
