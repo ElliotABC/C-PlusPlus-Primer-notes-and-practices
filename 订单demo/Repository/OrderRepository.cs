@@ -24,7 +24,7 @@ public class OrderRepository : DbRepository, IOrderRepository
     {
         try
         {
-            return await DbContext.Orders.UpdateAsync(order);
+            return await DbContext.Orders.InsertOrUpdateAsync(order);
         }
         catch (VersionExceptions ex)
         {
@@ -35,5 +35,12 @@ public class OrderRepository : DbRepository, IOrderRepository
     public async Task<(long total, List<Order> list)> GetPage(int pageIndex, int pageSize)
     {
         return await DbContext.Orders.GetListToPageAsync(it => it.Id > 0, pageIndex, pageSize, it => it.CreateTime);
+    }
+
+    public async Task<Order> GetOrder(long orderId)
+    {
+        var reslut = await DbContext.Orders.GetAsync(it => it.Id == orderId);
+        reslut.SetRepository(this);
+        return reslut;
     }
 }

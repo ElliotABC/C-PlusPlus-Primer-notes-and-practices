@@ -8,4 +8,6 @@ public interface IOrderService
     Task<bool> CreateOrder(CreateOrderDto dto);
 
     Task<List<Order>> GetPage(int pageIndex, int pageSize);
+    
+    Task<bool> AddOrUpdateProduct(AddOrUpdateProductDto dto);
 }

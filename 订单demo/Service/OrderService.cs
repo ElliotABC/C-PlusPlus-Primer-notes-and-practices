@@ -45,4 +45,12 @@ public class OrderService : DbService, IOrderService
         var data = await _repository.GetPage(pageIndex, pageSize);
         return data.list;
     }
+
+    public async Task<bool> AddOrUpdateProduct(AddOrUpdateProductDto dto)
+    {
+        var order = await _repository.GetOrder(dto.OrderId);
+        var products = await _productRepository.In(dto.Products.Select(it => it.Id).ToList());
+        return await order.AddOrUpdateProduct(products);
+        
+    }
 }

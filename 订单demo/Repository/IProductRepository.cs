@@ -8,5 +8,6 @@ public interface IProductRepository : IUnitOfWork
     Task<long> Create(Product product);
     Task<bool> Save(Product product);
     Task<Product> Get(long id);
+    Task<List<Product>> In(List<long> ids);
     Task<bool> Delete(long id);
 }

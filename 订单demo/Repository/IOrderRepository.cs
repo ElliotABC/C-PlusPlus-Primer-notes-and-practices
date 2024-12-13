@@ -12,4 +12,6 @@ public interface IOrderRepository : IUnitOfWork
     Task<bool> Save(Order order);
     
     Task<(long total, List<Order> list)> GetPage(int pageIndex, int pageSize);
+
+    Task<Order> GetOrder(long orderId);
 }

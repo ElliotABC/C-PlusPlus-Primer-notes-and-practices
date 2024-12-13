@@ -24,6 +24,11 @@ public class ProductRepository : DbRepository, IProductRepository
         return await DbContext.Product.GetByIdAsync(id);
     }
 
+    public async Task<List<Product>> In(List<long> ids)
+    {
+        return await DbContext.Product.AsQueryable().In(ids).ToListAsync();
+    }
+
     public async Task<bool> Delete(long id)
     {
         return await DbContext.Product.DeleteByIdAsync(id);

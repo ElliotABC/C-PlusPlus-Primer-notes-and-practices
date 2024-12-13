@@ -87,6 +87,28 @@ public class Order
     {
         await OrderRepository.CreateOrder(this);
     }
+
+    public async Task<bool> AddOrUpdateProduct(List<Product> products)
+    {
+        var orderRecordList = new List<OrderRecord>();
+        foreach (var product in products)
+        {
+            var orderRecord = new OrderRecord
+            { 
+                OrderId = Id,
+                ProductId = product.Id,
+                ProductName = product.Name,
+                Quantity = 1,
+                UnitPrice = product.Price,
+                TotalPrice = product.Price * 1,
+                CreateTime = DateTime.Now,
+                Remark = product.Remark
+            };
+            orderRecordList.Add(orderRecord);
+        }
+        await Record(orderRecordList);
+        return true;
+    }
 }
 
 public enum OrderStatus
