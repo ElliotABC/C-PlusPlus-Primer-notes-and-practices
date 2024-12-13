@@ -21,7 +21,7 @@ const char* errorToString(LoaderError err)
     case LoaderError::ModuleHandle: return "Couldn't find a module handle.";
     case LoaderError::FunctionAddress: return "Couldn't find a function address.";
     case LoaderError::OpenProcessNull: return
-            "OpenProcess returned 0, make sure Genshin Impact is opened before running this.";
+            "OpenProcess returned 0, make sure Process is opened before running this.";
     case LoaderError::AllocationFailed: return "Couldn't allocate memory for the DLL path.";
     default: return "Unknown error.";
     }
