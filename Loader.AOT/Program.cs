@@ -1,7 +1,49 @@
 ﻿using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Newtonsoft.Json;
 
-public enum LoaderError
+Console.WriteLine("Waiting for Process to start");
+string exePath = Process.GetCurrentProcess().MainModule.FileName;
+string dllPath = Path.Combine(Path.GetDirectoryName(exePath), "Library.dll");
+string jsonPath = Path.Combine(Path.GetDirectoryName(exePath), "loader.json");
+if (!File.Exists(jsonPath))
+{
+    ExeData exeData = new ExeData { Names = new List<string> { "MyApp" } };
+    string jsonData = JsonConvert.SerializeObject(exeData, Formatting.Indented);
+    File.WriteAllText(jsonPath, jsonData);
+    Console.WriteLine("loader.json created and populated with data.");
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("Please run the loader again.");
+    return;
+}
+
+var processData = JsonConvert.DeserializeObject<ExeData>(File.ReadAllText(jsonPath));
+int processId = 0;
+while (processId == 0)
+{
+    foreach (var processName in processData.Names)
+    {
+        processId = Loader.GetProcessIdByName(processName);
+        if (processId != 0)
+        {
+            break;
+        }
+    }
+}
+
+Console.WriteLine($"Injecting into {processId}");
+
+Console.WriteLine($"Library path: {dllPath}");
+
+if (!Loader.Inject(processId, dllPath))
+{
+    Console.Error.WriteLine("Failed to inject the library.");
+    return;
+}
+
+Console.WriteLine("Done.");
+
+enum LoaderError
 {
     ProcessListSnapshot,
     ModuleHandle,
@@ -10,7 +52,7 @@ public enum LoaderError
     AllocationFailed
 }
 
-public class Loader
+class Loader
 {
     public static string ErrorToString(LoaderError err)
     {
@@ -19,7 +61,8 @@ public class Loader
             case LoaderError.ProcessListSnapshot: return "Couldn't create a process list snapshot.";
             case LoaderError.ModuleHandle: return "Couldn't find a module handle.";
             case LoaderError.FunctionAddress: return "Couldn't find a function address.";
-            case LoaderError.OpenProcessNull: return "OpenProcess returned 0, make sure Process is opened before running this.";
+            case LoaderError.OpenProcessNull:
+                return "OpenProcess returned 0, make sure Process is opened before running this.";
             case LoaderError.AllocationFailed: return "Couldn't allocate memory for the DLL path.";
             default: return "Unknown error.";
         }
@@ -35,6 +78,7 @@ public class Loader
                 return process.Id;
             }
         }
+
         return 0;
     }
 
@@ -59,7 +103,10 @@ public class Loader
 
     public static bool Inject(int processId, string dllPath)
     {
-        IntPtr proc = OpenProcess(ProcessAccessFlags.CreateThread | ProcessAccessFlags.VirtualMemoryOperation | ProcessAccessFlags.VirtualMemoryWrite, false, processId);
+        IntPtr proc =
+            OpenProcess(
+                ProcessAccessFlags.CreateThread | ProcessAccessFlags.VirtualMemoryOperation |
+                ProcessAccessFlags.VirtualMemoryWrite, false, processId);
         if (proc == IntPtr.Zero)
         {
             Console.Error.WriteLine(ErrorToString(LoaderError.OpenProcessNull));
@@ -67,7 +114,8 @@ public class Loader
         }
 
         int pathLen = dllPath.Length + 1;
-        IntPtr allocation = VirtualAllocEx(proc, IntPtr.Zero, pathLen, AllocationType.Commit | AllocationType.Reserve, MemoryProtection.ReadWrite);
+        IntPtr allocation = VirtualAllocEx(proc, IntPtr.Zero, pathLen, AllocationType.Commit | AllocationType.Reserve,
+            MemoryProtection.ReadWrite);
         if (allocation == IntPtr.Zero)
         {
             Console.Error.WriteLine(ErrorToString(LoaderError.AllocationFailed));
@@ -112,16 +160,20 @@ public class Loader
     }
 
     [DllImport("kernel32.dll", SetLastError = true)]
-    public static extern IntPtr OpenProcess(ProcessAccessFlags dwDesiredAccess, [MarshalAs(UnmanagedType.Bool)] bool bInheritHandle, int dwProcessId);
+    public static extern IntPtr OpenProcess(ProcessAccessFlags dwDesiredAccess,
+        [MarshalAs(UnmanagedType.Bool)] bool bInheritHandle, int dwProcessId);
 
     [DllImport("kernel32.dll", SetLastError = true)]
-    public static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress, int dwSize, AllocationType flAllocationType, MemoryProtection flProtect);
+    public static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress, int dwSize,
+        AllocationType flAllocationType, MemoryProtection flProtect);
 
     [DllImport("kernel32.dll", SetLastError = true)]
-    public static extern bool WriteProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, string lpBuffer, int nSize, out int lpNumberOfBytesWritten);
+    public static extern bool WriteProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, string lpBuffer, int nSize,
+        out int lpNumberOfBytesWritten);
 
     [DllImport("kernel32.dll", SetLastError = true)]
-    public static extern IntPtr CreateRemoteThread(IntPtr hProcess, IntPtr lpThreadAttributes, int dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, int dwCreationFlags, out uint lpThreadId);
+    public static extern IntPtr CreateRemoteThread(IntPtr hProcess, IntPtr lpThreadAttributes, int dwStackSize,
+        IntPtr lpStartAddress, IntPtr lpParameter, int dwCreationFlags, out uint lpThreadId);
 
     [DllImport("kernel32.dll", SetLastError = true)]
     public static extern IntPtr GetModuleHandle(string lpModuleName);
@@ -164,38 +216,7 @@ public class Loader
     }
 }
 
-class Program
+class ExeData
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Waiting for Process to start");
-
-        int processId = 0;
-        while (processId == 0)
-        {
-            foreach (var processName in new[] { "notepad", "notepad", "notepad" })
-            {
-                processId = Loader.GetProcessIdByName(processName);
-                if (processId != 0)
-                {
-                    break;
-                }
-            }
-        }
-
-        Console.WriteLine($"Injecting into {processId}");
-
-        string exePath = Process.GetCurrentProcess().MainModule.FileName;
-        string dllPath = Path.Combine(Path.GetDirectoryName(exePath), "Library.dll");
-
-        Console.WriteLine($"Library path: {dllPath}");
-
-        if (!Loader.Inject(processId, dllPath))
-        {
-            Console.Error.WriteLine("Failed to inject the library.");
-            return;
-        }
-
-        Console.WriteLine("Done.");
-    }
+    public List<string> Names;
 }
