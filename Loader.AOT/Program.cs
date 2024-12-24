@@ -190,6 +190,7 @@ class Loader
     [DllImport("kernel32.dll", SetLastError = true)]
     public static extern bool WaitForSingleObject(IntPtr hHandle, int dwMilliseconds);
 
+    [Flags]
     public enum ProcessAccessFlags : uint
     {
         CreateThread = 0x0002,

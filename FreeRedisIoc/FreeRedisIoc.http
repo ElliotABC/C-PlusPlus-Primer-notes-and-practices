@@ -1,0 +1,6 @@
+@FreeRedisIoc_HostAddress = http://localhost:5101
+
+GET {{FreeRedisIoc_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
