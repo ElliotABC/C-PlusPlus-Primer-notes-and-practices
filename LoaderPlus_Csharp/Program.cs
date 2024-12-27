@@ -35,16 +35,16 @@ Console.WriteLine($"Injecting into {processId}");
 
 Console.WriteLine($"Library path: {dllPath}");
 
-// if (!Loader.Inject_APC("Code", dllPath))
-// {
-//     Console.Error.WriteLine("Failed to inject the library.");
-//     return;
-// }
-if (!Loader.Inject(processId, dllPath))
+if (!Loader.Inject_APC("notepad", dllPath))
 {
     Console.Error.WriteLine("Failed to inject the library.");
     return;
 }
+// if (!Loader.Inject(processId, dllPath))
+// {
+//     Console.Error.WriteLine("Failed to inject the library.");
+//     return;
+// }
 // int pid;
 // List<int> tids = new List<int>(); // 需要获取进程所有的线程ID
 // Loader.FindProcess2("Code", out pid, tids);

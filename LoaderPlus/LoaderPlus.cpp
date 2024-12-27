@@ -34,9 +34,9 @@ bool FindProcess(const wchar_t* processName, DWORD& dwProcess) {
 //DLL远程线程注入
 void CreateRemoteThread_Inject(){
     DWORD dwProcess = 0;
-    char myDLL[] = "C:\\testDLL.dll";
+    char myDLL[] = "C:\\Library.dll";
     //查找进程FlappyBird.exe
-    if(FindProcess(L"FlappyBird.exe", dwProcess)){
+    if(FindProcess(L"notepad.exe", dwProcess)){
         HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwProcess);    //打开进程
         LPVOID allocatedMem = VirtualAllocEx(hProcess, NULL, sizeof(myDLL), MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);  //在进程中分配内存
         WriteProcessMemory(hProcess, allocatedMem, myDLL, sizeof(myDLL), NULL); //写入DLL路径
@@ -305,14 +305,14 @@ bool FindProcess2(const wchar_t* processName, DWORD& dwProcess, vector<DWORD>& d
 void APC_Inject(){
     DWORD pid;
     vector<DWORD> tids;     //需要获取进程所有的线程ID
-    if (FindProcess2(L"FlappyBird.exe", pid, tids)) {
+    if (FindProcess2(L"notepad.exe", pid, tids)) {
         HANDLE hProcess = OpenProcess(PROCESS_VM_WRITE | PROCESS_VM_OPERATION, FALSE, pid);
         if (hProcess == NULL) {
             cout << "OpenProcess failed" << endl;
             return;
         }
         auto p = VirtualAllocEx(hProcess, NULL, 1<<12, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE); //在目标进程中申请内存
-        wchar_t buffer[] = L"C:\\testDLL.dll";
+        wchar_t buffer[] = L"C:\\Library.dll";
         WriteProcessMemory(hProcess, p, buffer, sizeof(buffer), NULL); //将DLL路径写入目标进程中
         for(const auto& tid: tids){
             HANDLE hThread = ::OpenThread(THREAD_SET_CONTEXT, FALSE, tid);
@@ -331,10 +331,10 @@ void APC_Inject(){
 int main()
 {
     printf("Inject\n");
-    CreateRemoteThread_Inject();
+    // CreateRemoteThread_Inject();
     //CreateRemoteThread_shellcode();
     //SetWindowHookEx_inject();
-    //APC_Inject();
+    // APC_Inject();
     printf("执行结束\n");
     getchar();
     return 0;
